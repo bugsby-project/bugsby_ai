@@ -1,0 +1,1261 @@
+,Summary,Priority
+0,JDBC Appender should use JNDI Manager and JNDI access should be limited.,Major
+1,ExtendedLoggerWrapper.logMessage double-logs when location is requested,Major
+2, should not re-format the result of Message.getFormattedMessage,Major
+3, does not take the MessageFactory into account,Major
+7,CVE-2021-45105 fix for Java 7,Major
+8,MapLookup should lookup MapMessage before properties,Major
+9, 2.x mitigations for CVE-45046 is insufficient,Major
+10, 1.2 bridge for Syslog Appender defaults to port 512 instead of 514,Major
+12,-core-2.0-beta9.jar CVE-2021-44228 vulnerability ,Major
+13,Limit JNDI to the java protocol only,Major
+15,Certain strings can cause infinite recursion,Major
+16,JNDI lookups in layout (not message patterns) enabled in 2 < 2.16.0,Major
+17,UPgrade,Major
+19,Limit the protocols JNDI can use and restrict LDAP.,Major
+20,ScriptAppenderSelector documentation example fails with importPackage undefined.,Major
+22,JsonTemplateLayout epoch resolver renders incorrect values,Major
+23,Kafka appender with new topic configuration get overried by the old one,Major
+24,Wrong subject on mail when it depends on the LogEvent,Major
+25,SmtpManager sends emails with OFF level messages,Major
+26,Reduce indirection/branching in PatternLayout to improve throughput,Major
+30,"JsonTemplateLayout unable to print file name, line number.",Major
+31,Marker.getParents() is not thread-safe,Major
+32,FixedDateFormat performs poorly with a PreciseClock,Major
+33,RandomAccessFile appender uses incorrect default buffer size,Major
+34,Kuberenetes Lookup referring to wrong  classname,Major
+36,Avoid overhead in *Manager.setEndOfBatch(boolean),Major
+37,Attempting to call getExtendedStackTraceAsString() after deserializing JSON LogEvent results in a NPE,Major
+41,ComodificationException in concurrent access to LoggerContext::stop,Major
+42,Asynchronous Logger WAITS indefinitely after end of main method,Major
+43,Category.setLevel should accept null value,Major
+44,JSON Template Layout JsonWriter formattableBuffer Memory leak,Major
+47,Race in JsonTemplateLayout where a timestamp could end up unquoted,Major
+48,Why the logger get by  LoggerFactory.getILoggerFactory() can only use current LoggerContext,Major
+49,Messages logged inconsistently when using JsonTemplateLayout.,Major
+50,Broken link to Wiki,Major
+54,Integer overflow in DefaultErrorHandler,Major
+55,NameUtil.md5(String) could leak plaintext credentials,Major
+58,Logger.throwing(Throwable) does not document level it is logging at,Major
+59,Logger.catching(Throwable) does not document level it is logging at,Major
+61,Change of java Thread name is not reflecting in 2 logs (pattern ),Major
+62,"ForkJoinPool common pool is initialized, no option to supply another executor",Major
+63,JsonWriter truncation doesn't take surrogates into account,Major
+65,JdbcAppender composes an incorrect INSERT statement without a ColumnMapping element.,Major
+66, fails to initialize with --cloud-config in Java 8,Major
+67,"Rename EventTemplateAdditionalField#type (conflicting with properties file parser) to ""format""",Major
+68,AsyncAppender thread gets killed with ThreadDeath exception,Major
+70,Deadlock between JUL and Disruptor using async logging,Major
+71,JsonTemplateLayout event additional fields are not read from config,Major
+72,Shutdown callbacks registered in LoggerContext.setUpShutdownHook() aren't strongly referenced,Major
+73,Properties are not resolved with 1 configuration,Major
+74,High CPU at Java 11 due to the use of StackWalker from StackLocator.getCallerClass,Major
+75,NPE in MDCContextMap,Major
+76,"""AsyncAppender is not active"" when logging with AsynAppender while the system is reconfigure  concurrently",Major
+77,"If loggercontext got reconfigured and kafka appender got recreated, the previous producer can not be closed, which cause thread leak",Major
+78,2EventListener in ....cloud.config.client listens for wrong event,Major
+79,2 Cloud Config Logging System can't load config,Major
+81,LogEventWrapper.getThread only works on the first invocation,Major
+82,Avoid initializing volatile fields to their default values,Major
+83,Error creating rolling file with dated folder,Major
+84,Async logging should avoid submitting work from Thread threads,Major
+89,Size based rolling stops working after first time base rolling,Major
+91,High CPU consumption using StackWalker,Major
+92,Kubernetes Lookup fails to get container and image information,Major
+93,StreamClosed IOException after first time based rolling,Major
+94,ContextDataProvider will cause concurrent threads blocking at the first logging time,Major
+95,Null pointer exception when no network interfaces are available,Major
+96,NullPointerException in ThreadContextDataInjector,Major
+97,Fully asynchronous logging results in two disruptors being created,Major
+99,TcpSocketManager.write swallows IOException when retry = false or reconnector != null,Major
+101,GelfLayout does not enable locations when a location is required for the message pattern.,Major
+102,Allow the file size action to be sensitive to the correct Locale.,Major
+104,java.lang.NullPointerException at java9 org.apache.logging..util.StackLocator.calcLocation() ,Major
+105,LoggerContext should skip looking up localhost when hostName is configured.,Major
+106,TimeFilter does not handle daylight saving time transitions,Major
+107,YamlLayoutTest.testAdditionalFields test is sensitive to environment changes,Major
+108,Unable to parse the log LEVEL when it ends with SPACE.,Major
+110,Timestamp handling ordering regression in JsonLayout between 2.10.0 and 2.11.0,Major
+111,Rolling stuck at counter 10 by RollingFile appender when counter is zero padded,Major
+114,NullPointerException after reconfiguring via JMX,Major
+115,NPE in RoutingAppender without pattern,Major
+117,2 fails when a whitespace is in the file path and Java security manager is used,Major
+118,RollingFileAppender with DirectWriteRolloverStrategy does not work with HtmlLayout,Major
+119,RollingFile does not roll with createOnDemand=true,Major
+120,RollingFileAppender: NPE when using a custom DirectFileRolloverStrategy without fileName,Major
+121,ClassLoaderContextSelector: WeakReference and GC,Major
+122,LoaderUtil.getClassLoaders fails to update loop state,Major
+124,Logger.converter can be removed from -18-impl,Major
+125,Combination of async logging and -jul results in recursive call warnings,Major
+126,Broken link for apache--2.12.1-bin.tar.gz,Major
+127,-web is unable to locate the servlet context in  Boot.,Major
+128, log rotation failing,Major
+129,RingBufferLogEvent.clear() is not called in case of OutOfMemoryError (or any other exception/error),Major
+130,Slow initialization under Windows,Major
+131,2 can't compress rollover log file,Major
+132,"ArrayIndexOutOfBoundsException in UuidUtil, when MAC address is longer than 6 bytes",Major
+134,"PluginValue does not support attribute names besides ""value""",Major
+136,DeleteAction race results in failure to delete rolled files,Major
+138,Automatic-Module-Name missing from some jars,Major
+139,"""Values not bound to statement"" when using JDBC appender, appender does not respect bufferSize=""0"".",Major
+140,Exceptions during compacting in the context of RollingFileAppender are not logged,Major
+141,JSON output wrong when using additonal fields,Major
+142,ArrayIndexOutOfBoundsException in the initialization of UuidUtil,Major
+144,Circular dependency in -core pom.xml,Major
+145,Wrong java.version check in ThreadNameCachingStrategy,Major
+146,RoutingAppender purge policy should only stop appenders that the RoutingAppender has created,Major
+147,RoutingAppender + purge policy race results in attempts to append to a closed appender,Major
+149,maxLength for StructuredDataId and StructuredDataMessage always maximum 32,Major
+150,"Possible ClassCastException in org.apache.logging..core.script.ScriptManager.ScriptManager(Configuration, WatchManager)",Major
+151,"Typo in method name org.apache.logging..core.config.composite.MergeStrategy.mergConfigurations(Node, Node, PluginManager)",Major
+153,Fix RollingAppenderSizeWithTimeTest.testAppender flakes,Major
+154,NullPointerException at org.apache.logging..core.appender.db.jdbc.JdbcDatabaseManager.writeInternal(JdbcDatabaseManager.java:803),Major
+156,"Windows - File creationTime issue for RollingFileAppender, combined time/size policy",Major
+157,Asynchronous logging when the queue is full results heavy CPU load,Major
+158,java.lang.StackOverflowError at org.apache.logging..junit.AbstractExternalFileCleaner.println(AbstractExternalFileCleaner.java:169),Major
+159,Same file is overwritten on rollover which causes logs loss,Major
+160,StackOverflowError at org.apache.logging..LogManager.getContext(),Major
+162,RollingFileAppender don't append log file after restart service.,Major
+164,Missing curly brackets at value gitUserName annotation,Major
+168,Add -appserver to BOM,Major
+171,In -core AbstractStringLayout java version detection is not JEP223 compatible,Major
+173,NullPointerException in JdbcAppender.createAppender(),Major
+174,Literal values do not work with ColumnMapping for JdbcAppender,Major
+175,-1.2-api works only with core,Major
+176,TLS syslog appender: doc suggests to use <TLSSyslog> to configure appender,Major
+177,Event starting with upper case not found by AbstractEventLogger.logEvent,Major
+179,Add  to BOM pom.xml,Major
+180,Cron and Size Triggering Policies not rolling properly,Major
+181,StructuredDataMessage is not logged,Major
+182,concurrent modification exception when using list appender,Major
+185,Strings.toRootUpperCase must be a static method,Major
+186,"JDBC Appender fails when using both parameter, source, and literal ColumnMapping elements",Major
+187,JMS Appender may throw a NullPointerException when JMS is not up while the Appender is starting.,Major
+188,JmsAppender reconnectIntervalMillis cannot be set from a configuration file,Major
+189,SizeBasedTriggeringPolicy is not honored when using the DirectWriteRolloverStrategy if the machine restarts,Major
+190,BasicContextSelector cannot be used in a OSGI application,Major
+191,Avoid NullPointerExceptions in org.apache.logging..core.config.AbstractConfiguration for null arguments to appenders,Major
+193,org.apache..SimpleLayout and ConsoleAppender missing in -1.2-api,Major
+194,ColumnMapping literal not working,Major
+195,RollingRandomAccessFileManager ignores new file patterns from programmatic reconfiguration,Major
+196,Missing dependency to -18-impl in -bom,Major
+197,ErrorHandler should be invoked with the failing LogEvent when possible,Major
+198,AbstractAppender.setHandler(null) should not set a null ErrorHandler,Major
+199,Setting the exceptionHandler on the AuditEvent sets it as a ThreadContext variable,Major
+200,Handle some unchecked exceptions while loading plugins,Major
+201,AbstractEventLogger.logEvent doesn't check for missing required context attributes,Major
+202,NullPointerException when closing never used RollingRandomAccessFileAppender,Major
+204,Lock contention in classloader because of missing org..ext.EventData,Major
+205,Exceptions are added to all columns when a JDBC Appender's ColumnMapping uses a Pattern,Major
+206,Predeployment of PersistenceUnit that using  as session logger failed (#198),Major
+207,Fix incorrect links in  web documentation.,Major
+208,fix the CacheEntry map in ThrowableProxy#toExtendedStackTrace to be put and gotten with same key,Major
+211,StringBuilder escapeJson performs unnecessary Memory Allocations,Major
+212,Outputs wrong message when used within overridden Throwable method,Major
+213,LoggerContext leak using LoggerFactory,Major
+214,NameAbbreviator skips first fragments,Major
+215,PropertiesUtil.reload() might throw NullPointerException,Major
+216,MongoDB Test Flakes,Major
+217,Typo in -api Activator,Major
+218,JsonLayout not working with AsyncLoggerContextSelector in 2.11.0,Major
+220,Errors thrown in formatting may stop background threads,Major
+222,java.util.ServiceConfigurationError: org.apache.logging..util.PropertySource: Provider org.apache.logging..util.EnvironmentPropertySource not a subtype,Major
+223,Custom Async ContextSelectors should disable location by default,Major
+224,AsyncLogger without specifying a level always uses ERROR,Major
+225,AbstractLogger NPE hides actual cause when getFormat returns null,Major
+226,AsyncQueueFullMessageUtil causes unparsable message output,Major
+227,getNonNullImmutableMessage should retain format and parameters,Major
+228,NullPointerException while calling Configurator.setLevel(),Major
+229,Using async appender with json layout causes only the message to be written,Major
+230,Reusable event memento messages should retain format,Major
+231, 2.10+not working with  1.8 in OSGI environment,Major
+4,PropertiesConfiguration.buildAppender not adding filters to custom appender,Blocker
+5,MD5 Hash links for 2.3.1 are all broken,Blocker
+6,Broken download page links and incorrect titles,Critical
+11,PropertiesConfiguration.parseAppenderFilters NPE when parsing properties file filters,Blocker
+14, 1.2 bridge API hard codes the Syslog protocol to TCP,Blocker
+18,Lookup not found while Interpolator initializing,Critical
+21,DefaultErrorHandler can not share values across threads,Critical
+27,EncodingPatternConverter CRLF encoding is slow with large log messages (it has quadratic time complexity),Minor
+28,RollingFileAppender: Overwritting rotated log file when using zip,Critical
+29,wrong documentation for logging with Level.OFF,Minor
+35,Timestamp always returns 0 for LogEventAdapter,Minor
+38,"Wrong value ""false"" of RollingFileAppender.immediateFlush when configured from a  1.x configuration",Minor
+39,Fix logger placeholders,Minor
+40,SmtpManager.createManagerName ignores port,Minor
+45,JsonTemplateLayoutNullEventDelimiterTest sporadically fails on Windows,Minor
+46,Windows build fails,Minor
+51,JsonTemplateLayout timestamp resolver doesn't format nanoseconds,Minor
+52,Issues using Lookup Plugin in Json Template Logging,Minor
+53,ensure EncodingPatternConverter#handlesThrowable is implemented,Minor
+56,BasicContextSelector.hasContext should take default CONTEXT into account,Minor
+57,OutputStreamManager does not clear buffer on exception,Trivial
+60,"1ConfigurationConverter on Windows produces ""&#xd;"" at end of every line",Minor
+64,OnStartupTriggeringPolicy only rolls over when minsize = 0 with DirectWriteTriggeringPolicy,Minor
+69,NullPointerException when used the messageParameter resolver of the JsonLayoutTemplate,Minor
+80,Reconfiguration failed during backend server startup,Blocker
+85,typo in log line,Trivial
+86,Reconfigure doesn't work for XmlConfiguration 1 compat,Minor
+87,Data-Time Formate in HTML Layout,Blocker
+88,Date patterns with microseconds do not work,Minor
+90,JUL adapter ignores log filters,Minor
+98,Error message contains reference to non-existent DirectFilenameRolloverStrategy,Minor
+100,RollingRandomAccessFileAppender not using filePermissions,Blocker
+103,NullPointerException from AsyncLogger,Minor
+109,Performance issue in  2.12.1 and  2.13.0,Blocker
+112,ServletContainerInitializer gets the StatusLogger too early.,Minor
+113,No placeholder supplied for message logged in RollingFileappender,Minor
+116,TimeBasedTriggeringPolicy of RollingRandomAccessFile is not updated instantly,Minor
+123,Change in shutdown behaviour between 2.12.1 and 2.13.0,Minor
+133,MapMessage#getFormattedMessage() incorrectly formats Object's,Minor
+135,Not compressing after rolling a file using copy and truncation method,Critical
+137,OutputStreamAppender.Builder ignores setFilter(),Trivial
+143,Validation blocks definition of script in properties configuration,Minor
+148,${web:rootDir} not working in weblogic 12c,Blocker
+152,Backward compatibility with third party subclasses is broken by added constructor argument in ThrowablePatternConverter,Minor
+155,AsyncQueueFullPolicy value short names should be case insensitive,Minor
+161,StackOverflowException when server not reachable with SocketAppender,Critical
+163,Unable to reinstate old timeMillis timestamp using 2.clock property in JSON layout,Minor
+165,Event.toString() fails for events without attributes,Minor
+166,RequestContextMappings should ignore private and instance fields,Blocker
+167,CronExpression.getTimeBefore() returns incorrect result,Critical
+169,StackTraceElementDeserializer fails to deserialize when using Java 9 or above,Minor
+170,Error using  in pattern : MapPatternConverter cannot contain multiple static newInstance method,Blocker
+172,"RollingFileAppender cannot be configured with both OnStartupTriggeringPolicy and createOnDemand=""true""",Minor
+178,Error message contains reference to non-existent DirectFilenameRolloverStrategy,Trivial
+183,Make MapMessageLookup.lookup usable with MapMessage again,Minor
+184,RollingFileManager OnStartupTriggeringPolicy never rolls the file on startup,Minor
+192,JMH Benchmarks in not consuming all computed variables (risk of DCE),Minor
+203,Better handling of optional properties,Minor
+209,Thread indefinitely blocked when logging a message in an interrupted thread,Critical
+210,NullPointerException in org.apache.logging..util.LoaderUtil.getClassLoaders() when using Bootstrap class loader,Blocker
+219,AsyncLoggerConfig background thread name contains extra hyphen,Trivial
+221,Rolling file appender concatenating debug message instead of using formatting,Minor
+240,"Strings::join, when called with [null] returns ""null"" instead of EMPTY",Minor
+246,RollingRandomAccessFile appender with DirectWriteRolloverStrategy fails with a NullPointerException when a header is supplied,Critical
+249,Insufficient Permissions Error when Rolling Log Files,Minor
+253,MainMapLookup ${main:--file} placeholder doesn't work,Blocker
+257,Cannot define both `filters` and `separator` for PatternLayout Ex,Minor
+261,ThreadContext map is cleared => entries are only available for one log event,Critical
+264,StackOverflowError at AwaitCompletionReliabilityStrategy,Blocker
+272,LoaderUtil getClassLoaders() method and while loops,Minor
+278,Wrong Apache Commons CSV version referenced in the Javadoc of CsvParameterLayout,Trivial
+283,"RollingFileManager not removed when RollingFileAppender is stopped, using DirectWriteRolloverStrategy",Blocker
+285,java.locale.providers set to HOST causes 2 to crash in Java 9,Blocker
+287,Exception java.nio.charset.UnsupportedCharsetException: cp65001 in 2.9.0,Minor
+288,NullPointerException in LogManager.getLogger when called from anonymous class initializer,Critical
+296,Stack locator calc location is broken on JDK 9 in 2.9.0,Minor
+297,java.lang.AbstractMethodError: javax.xml.parsers.DocumentBuilderFactory.setFeature(),Minor
+303,StyleConverter.newInstance argument validation is incorrect,Minor
+304,HighlightConverter converts all unrecognised levels to DEBUG,Minor
+318,Docker build broken with -api-java9,Trivial
+322,ClassNotFoundException when making all loggers asynchronous under OSGi environment,Blocker
+323,JMS Appender does not know how to recover from a broken connection,Critical
+326,Having -core on the compile classpath somehow breaks compilation even if I'm not calling it,Blocker
+327,ScriptEngineManager is not available in Android and causes a NoClassDefFoundError,Blocker
+339,Plugins lookup by package is not compatible with  Boot jar packaging,Minor
+340,Cassendra's integration test fails on Windows,Minor
+344,NullPointerException using fileName property of RollingFile Appender with DirectWriteRolloverStrategy,Minor
+347,(not only) default rollover strategy is *broken*,Blocker
+352,Upgrade Logback to version 1.2,Minor
+357,Error determining the current charset,Blocker
+358,InterruptedException on RollingFileManager#rollover(),Minor
+375,Unwanted transitive dependency on geronimo-jms_1.1_spec causes OSGi tests to fail,Minor
+384,CronTriggeringPolicy uses wrong naming and produces NPE,Critical
+385,"CronTriggeringPolicy breaks awefully when using ""reconfigure"" of LoggerContext",Critical
+388,Fix MemoryMappedFileAppender.createAppender() Javadoc for immediateFlush,Minor
+392,FlumeAppender get shutdown timeout 0,Blocker
+393,KafkaAppender get shutdown timeout 0,Blocker
+405, New method on LifeCycle interface breaks binary compatibility ,Blocker
+407,Value nesting during property substitution,Minor
+409,Layout is no longer optional,Minor
+410,Logging with a lambda expression with a method call that also logs causes logs within method call to reference line num and method name as parent method,Minor
+417,[CronTriggeringPolicy] ConfigurationScheduler schedules the task infinitely after first fire,Blocker
+418,java.lang.ArrayIndexOutOfBoundsException in ParameterizedMessage.formatTo(ParameterizedMessage.java:221),Critical
+432,(GC) ate conversion pattern with a period '.' is not garbage free,Minor
+433, RollingFileAppender every minute,Minor
+438,Class loader deadlock when using async logging and extended stack trace pattern,Critical
+440,OnStartupTriggeringPolicyTest fails on Windows saying the file is used by another process,Trivial
+447,Minor issues with the 2.6.1 web site,Minor
+448,ArrayIndexOutOfBoundsException in ReusableParameterizedMessage ,Critical
+451,2.6 is re-logging prior throwable instead of logging the throwable that is currently passed in by application code,Critical
+454,Minor issues with the 2.6 web site,Minor
+458,"XMLLayout indents, but not the first child tag (<Event>)",Minor
+462,No configuration reload is triggered under Windows when replacing the configuration file with one that has older last modified date.,Minor
+463,Exception from ServletContextListener prevents jetty--plugin run-forked.,Minor
+481,NullPointerException in FastDateParser$TimeZoneStrategy,Minor
+489,Async DynamicThresholdFilter does not use the log event's context map,Minor
+497,org.apache.logging..core.appender.routing.IdlePurgePolicy not working correctly,Critical
+498,Incorrect log rotation in last week of year,Critical
+503,Dead lock observed in BlockingWaitStrategy in ,Critical
+506,Documentation/XSD inconsistencies,Minor
+507,MongoDbConnection does not close MongoClient,Critical
+513,ERROR Unable to rename file in version 2.4 and 2.4.1,Critical
+515,Applications using -2.5 with monitorInterval never shut down,Critical
+520, JUL adapter is using MessageFormat on String passed by java.util.function.Supplier<String>,Minor
+530,OutputStreamManager in ConsoleAppender leaking managers,Minor
+533,NullPointerException when passing null to java.util.logging.Logger.setLevel(),Blocker
+536,"AbstractStringLayout implements Serializable, but is not Serializable",Critical
+537,Misleading StatusLogger WARN event in LogManager with java.util.Map,Minor
+540,Improper handling of JSON escape chars when deserializing JSON log events,Minor
+542,ThrowableProxy getExtendedStackTraceAsString throws NPE on deserialized nested exceptions,Minor
+546,Marker#contains(String) does not respect org..Marker contract,Minor
+552,Socket and Syslog appenders don't take timeout into account at startup,Minor
+554,Backward compatibility issue in -1.2-api NDC pop() and peek(),Minor
+563,2 Main Arguments Lookup by name doesn't work,Critical
+569,"RollingFileAppender only rotates when time is after rollover time, not on exact match",Critical
+577,Incorrect unlock in ProviderUtil,Trivial
+578,Numerical overflow in BurstFilter not handled correctly,Trivial
+580,Using monitorInterval with YAML config file format causes JSONParseException,Minor
+581,Typo in EventLogger documentation,Trivial
+585,2.component.properties not read for all properties,Minor
+587,System.out no longer works after the Console appender and JANSI are initialized,Critical
+592,Missing toUpperCase(Locale.ENGLISH),Critical
+593,"Manual refers to Route ""AppenderRef"" attribute, should be ""ref""",Minor
+595,Incorrect attribute name in PropertiesRewritePolicy example,Minor
+597,A new StatusLoggerAdmin listener is added to StatusLogger every time the log is reconfigured,Minor
+599,Reconfiguring statusLogger to a higher level doesn't work correctly,Minor
+601,org.apache.logging..core.jmx.Server never shuts down the ExecutorService it creates,Critical
+605, 1.2 Bridge doesn't map level ALL correctly in Category.getEffectiveLevel(),Minor
+608,Logging system fails to initialize if XInclude is not available,Minor
+609,Combining Root and AsyncRoot in Xml configuration,Minor
+611,ThrowableProxy.getExtendedStackTraceAsString causes NullPointerException ,Minor
+623,RollingRandomAccessFileAppender appends the header every time the application is started.,Minor
+630,ThrowableProxy fails if a class in logged stack trace throws java.lang.Error from initializer,Blocker
+631,failure to shutdown JVM when join called on AsyncAppender thread,Minor
+634,PermGen OutOfMemoryError when reloading webapp on Tomcat 6,Critical
+635,MarkerManager Marker.hasParents() returns opposite of correct result,Minor
+641, 2 throws ArrayIndexOutOfBoundsException,Critical
+644,"Logger only accepts Marker, not 's Marker",Minor
+652,Stray 2Plugins.dat appears during build,Trivial
+653,Webapp configuration page has incorrect class name,Minor
+659,Emit warning message to console if no config file found,Minor
+664,Android: java.lang.VerifyError: org/apache/logging//core/util/Closer,Blocker
+669,-D.configurationFile no longer accepts relative paths,Minor
+670,"Android: Could not find class 'javax.naming.InitialContext', referenced from method org.apache.logging..core.lookup.JndiLookup.lookup",Blocker
+671,LoggerConfig#waitForCompletion is not thread safe,Critical
+672,Self written Appender stopped working,Critical
+679,"Log rotation partly failed with error: ""Unable to create directory ...""",Critical
+680,Minor issues with 2 web site/documentation,Minor
+685,AsyncAppender ignores RingBufferLogEvents from AsyncLoggers (when all loggers async by setting context selector),Minor
+686,Plugins data file needs to be in META-INF for OSGi compatibility.,Blocker
+688,Log files not properly rolled over to the folder.,Critical
+701,Unable to recover after loading corrupted XML,Critical
+703,NoSQL appender logging password in clear text.,Critical
+706, closes MongoDB connections after the first log message,Critical
+710,JMX Memory Leak in Servlet Container,Critical
+712,Memory Leak,Blocker
+715,The name of the Logger implementation should point to  2,Critical
+720,No easy way to point to a configuration file in the WEB-INF folder,Minor
+721,Migration from 1.x page lists incorrect classes,Minor
+725,LogEvents with exceptions fail to deserialize,Critical
+740,MalformedObjectNameException: Invalid escape sequence... under Jetty,Minor
+745,BaseConfiguration class does not properly implement Configuration interface,Minor
+747,Resolution of ${hostName} in 2.xml file only works after first reference,Minor
+750,Cannot load 2 config file if path contains plus '+' characters,Trivial
+755,Race condition on Web app configuration prevents ${web:initParam. lookup,Minor
+761,2 should not automatically start in Servlet 3.0,Critical
+767,2 Database insert problem in Websphere,Blocker
+769,exception on shutdown tomcat in Mac OSX,Minor
+770,JDBCDatabaseManager does not send commit command,Minor
+771,2 Performs poorly with 500 concurrent users with Jboss 5.1.GA and JDK 6,Critical
+772,RollingRandomAccessFile pattern layout not work for mathod and line no,Minor
+773,exception related data put into one log file and rest of them put into another log file,Critical
+783,ConfigListener is starting LoggerContext twice,Minor
+784,"""EnterpriseNumber"" is missing in the ID of structured data when RFC5424Layout is used",Blocker
+786,Logger.info(Message) Javadoc is incorrect,Trivial
+791,Flume appender crashes when lock timeout occurs,Blocker
+796,NPE during shutdown.,Critical
+797,Classloader issue in OSGi-environment,Critical
+798,Build-path-issue. Invalid file or path...,Minor
+805,NoSQLAppender using MongoDB provider ignores username and password attributes,Critical
+808,Cyclic dependency in OSGi-context. Apache   Binding <-> -api,Blocker
+809,logging.-1.2-api doesn't export the  API 1.2. Dependent bundles can not be resolved.,Blocker
+817,Endless loop in ThrowableProxy.getCurrentStack,Critical
+818,Appender stops logging because META-INF/-provider.properties is left open,Trivial
+833,FastFileAppender overwrites previous log entries ,Minor
+834,Failover appender doesn't fail over on JDBC appender error,Minor
+835,"Change Javadoc generation per CVE-2013-1571, VU#225657",Critical
+840,Wasted work in RollingAppenderSizeTest.testAppender() and other tests,Minor
+842,Wasted work in UUIDUtil initialization,Minor
+843,Wasted work in XMLLayout.toSerializable(),Minor
+850,Incorrect error message if agent name specified in Flume appender properties,Minor
+855,Multi-byte character strings are scrambled in log output,Blocker
+856,Race condition when setting new filename in RollingFileAppender related code,Blocker
+859,EmptyStackException when logging exceptions with 2 in Java 8,Blocker
+865,PDF table of contents misses Configuration and Layouts sections,Minor
+867,IllegalStateException thrown during Tomcat shutdown,Critical
+874,"""entry"" and ""exit"" messages prepended with extra space, spaces not consistent between entry and exit",Minor
+877,Deadlock with SocketAppender,Critical
+878,LoggerContext method name misspelled (removeFiler should be removeFilter),Minor
+885,${env:...} is not replaced in fileName,Minor
+888,"The ""appender-ref"" functionality doesn't work perfectly in the AsynchAppender",Minor
+893,IllegalArgumentException during AsyncAppender shutdown,Minor
+896,LogManager.getLogger doesn't work,Critical
+897,Include arbitrary message fields in RFC-5424 structured data,Minor
+902,RFC5424 SD PARAM/VALUE escaping,Critical
+903,LocalizedMessageTest fails on linux system,Blocker
+907, 1.2 API implementation ClassCastException with SimpleLoggerContext,Minor
+911,Exception while deserializing event from SocketAppender,Critical
+912,Documentation is lacking info about valid status levels,Minor
+913,Typo in documentation of SocketAppender,Trivial
+924,Naming JMSQueue Appenders,Trivial
+928,Socket/Syslog reconnectionDelay results in constant reconnects,Critical
+939,Bad priority in Syslog messages,Critical
+941,"MapRewritePolicy always behaves like mode ""Add""",Minor
+949,PatternLayout appender not respecting format modifiers,Minor
+950,level not tested when -impl and org.:jcl-over-,Critical
+956,"RollingFile with filePattern=""logs/app-{MM-dd-yyyy}.log""",Minor
+958,"Binary package does not include ""apache"" name in root directory",Minor
+963,Level.toLevel throws IllegalArgumentException instead of returning default Level,Minor
+964,' test' requires initial ' install',Minor
+965,ClassCastException in Category logger,Blocker
+3,Accidental cache evictions in PersistentEntitiesResourceMappings,Major
+4,In case of low memory after GC all repository mappings are removed and 404 is returned,Major
+6,ConcurrentModificationException in PersistentEntitiesResourceMappings.java,Major
+8,ConcurrentModificationException in PersistentEntitiesResourceMappings.getMappingFor(…),Major
+10,Patch does not work when Lists occur somewhere in path and not at root,Major
+11,ConcurrentModificationException in PersistentEntitiesResourceMappings,Major
+14,Associated resources gets embedded and also linked,Major
+15,Unable to fetch resource with LAZY property,Major
+16,Fields mapped with JsonAnySetter are no longer updatable with http PATCH,Major
+20,Repository cors configurations are ignored unless there is a global cors configuration set ,Major
+22,Backend read-only properties overridden for PATCH requests,Major
+29,Proxy class detection for Hibernate 5 fails,Major
+31,sort repository return sort divided by sub class,Major
+33,"PUT and PATCH don't work, when custom entity lookup is configured.",Major
+37,BasePathAwareController disables DTO validation,Major
+38,java.lang.ClassNotFoundException: org.framework.context.EnvironmentAware,Major
+41,ResourceMetadataHandlerMethodArgumentResolver.supports(…) not working for ResourceMetadata,Major
+43,Cannot sort by property marked with JsonProperty.Access.READ_ONLY,Major
+45, Data REST with Custom Resource URI Fails on PUT/PATCH,Major
+47,Validation fails vith wrong error message. NotNull fails with JSR-303 validated property does not have a corresponding accessor,Major
+48,"Possible incompatibility between Cassandra, REST, and Kotlin",Major
+49,Potential NullPointerException in JsonLateObjectEvaluator.evaluate(…),Major
+51,Errors.reject() fails with NotReadablePropertyException when rejecting 'null' values,Major
+52,Adapt test cases to new CORS defaults in  5.0.2,Major
+53,All patch operations should verify paths before application,Major
+54,BasePathAwareController detection fails for CGLib-proxied controllers,Major
+57,HttpMessageNotWritableException for all non string attributes,Major
+58,Creating associations with nested URI's.,Major
+67,HttpMessageNotWritableException when  entity has enum attribute,Major
+70,JSON Patch to subresource collection results in SpelEvaluationException: Method size() cannot be found ,Major
+71,ResourceProcessor is not applied to declared type if lambda is used to create an instance of it,Major
+74,PATCH requests do not handle links to associations properly,Major
+77,CrossOrigin on rest repositories does not work with configured base path,Major
+79,Java 7 compatibility broken due to usage of Java 8 API in AnnotatedEventHandlerInvoker,Major
+81,Implementation details serialized for requests requesting arbitrary JSON response,Major
+82,PUT on Entity with OneToOne/ManyToOne doesn't update (PATCH works),Major
+86,DomainObjectReader doesn't read complex Maps properly,Major
+88,Annotated event handlers do not resolve generic parameter types,Major
+89,Patch fails on collection containing nested enums with class body,Major
+90,Sorting by an embedded property no longer works in Ingalls RC1,Major
+91,Repository event handlers don't respect Order annotations,Major
+94,Fix imports in Gemfire integration tests after move to Geode,Major
+97,PUT of Document with List<> fails to add entries post Hopper-SR5+,Major
+99,Patching on nested ElementCollection Map<> using application/merge-patch+json throws org.framework.orm..SystemException,Major
+101,Unable to add to a nested collection,Major
+102,Nested entities are replaced with new instances instead of being updated when merging,Major
+103,Transient properties in JSON should be included in merge,Major
+105,ResourceProcessor not used for nested Projection,Major
+106,PUT/PATCH of Entity object that is a Map silently dropping elements of Map,Major
+107,Regression with custom controllers,Major
+112,NestedEntitySerializer fails to serialize Map for Hibernate proxy,Major
+113,Users should be able to completely configure REST with implementation of RepositoryRestConfigurerAdapter,Major
+114,Problem serializing JSR-310 types (e.g. LocalDate),Major
+115,Fix integration tests failing due to more precise Content-Type headers returned by  MVC 4.3,Major
+116,JSON Patch silently nullifies property values,Major
+117,JsonLateObjectEvaluator uses hard-coded ObjectMapper,Major
+118,JSON Patch for arrays is broken,Major
+119,Patch with object value omitted,Major
+123,Transactional annotation is not being enforced on repository methods,Major
+126,Jackson's JsonTypeInfo is not supported,Major
+129,NullPointerException from RepositoryRestConfiguration if you inject mvcValidator into RepositoryRestConfigurer,Major
+130,"EndpointMBeanExportAutoConfiguration required a single bean, but 3 were found",Major
+131,NestedEntitySerializer does not support Maps,Major
+132,REST calls to /api always redirect to HAL Browser if no accept header is specified,Major
+136,Feign client doesn't serialize LocalDate's correctly with Brixton,Major
+137,RepositoryEntityController.saveAndReturn calls AfterSaveEvent with wrong domain object,Major
+139,RFC 6902 style patch operation not working anymore,Major
+143,Projection application failed,Major
+144,Projections are no longer applied to collection result,Major
+148,Build for Solr integration tests broken after upgrade to Solr 5.5 in  Data Solr,Major
+0,2.4.0/2.4.1 sprint-boot Rest Repositories initializr project reports lots of Beans is not eligible for getting processed by all BeanPostProcessors,Minor
+1,Crossorigin Put Requests to association resources not working anymore,Minor
+2,All the repositories start to respond 404 after some period of time (10-12 hours),Minor
+5,Use ConcurrentHashMap in PersistentEntitiesResourceMappings instead of ConcurrentReferenceHashMap,Critical
+7,Related entity rendered differently depending on  fetch type,Minor
+9,CI tests need to run integration tests,Minor
+12,Must send only 1 link to update a property reference that isn't a List or a Map,Minor
+13,DefaultExcerptProjector exposes projection present even if metadata returns Optional.empty(),Minor
+17,Bean is not created with class org.framework.remoting.jaxws.JaxWsPortProxyFactoryBean in Java 11,Minor
+18,Embedded resources default serialisation with projector,Minor
+19,Pagination - Unable to override with Default or Custom provided inputs ,Minor
+21,Deserializer customizations not propagated to Jackson creator properties,Minor
+23,The id parameter of the fromRequestId method of the BackendIdConverter class specified as non-null is null,Minor
+24,Can't PUT single-link URI references,Minor
+25,Custom serializer not applied anymore,Minor
+26,JSON patch doesn't update single Map's values,Minor
+27,UnsupportedCassandraOperationException when exposing by rest cassandra repository,Critical
+28,NullPointerException in RepositoryRestHandlerMapping during preflight request,Minor
+30,NullPointerException when ResourceMetadata not found for a specific type,Minor
+32,One to Many put not change a collection,Minor
+34,JsonInclude(NON_EMPTY) not honored when serializing Resource with  HATEOAS,Minor
+35,Patching a collection element at a position greater than 9 fails,Minor
+36,Append-PATCHing a collection via index fails,Minor
+39,UnwrappingRepositoryInvoker.invokeFindById(…) falls back to findById(…) even if a custom lookup is present,Minor
+40, Data Projection doesn't work when using with Page,Minor
+42,HttpMessageNotReadableException caused by NPE,Minor
+44,NullPointerException using PUT for a resource with a null target collection,Minor
+46,Patch request on an Entity with Version/ETag fails when using a projection,Minor
+50,Adapt WrappedProperties to changed defaults in Lombok 1.16.20,Minor
+55,Path expressions in JSON Patch allow references to non-properties,Critical
+56,Last modification header detection fails for projected query method executions,Minor
+59,MoveOperationUnitTests fail on  5 RC1,Minor
+60, 5 BUILD-SNAPSHOT breaks  Data REST,Minor
+61,HAL Browser: Custom Request Headers are lost in NON-GET requests,Minor
+62,AnnotatedEventHandlerInvoker registers event handler twice with Mockito2 and SpyBean,Minor
+63,self references generated incorrectly when id contains colons,Minor
+64,RepositoryRestMvcConfiguration declares a bean of name `config` ,Minor
+65,DomainObjectReader throws UnsupportedOperationException on PATCH request when altering the size of existing Array,Minor
+66,Executing a search query returns 404 when a query method returns an entity but no result is returned,Minor
+68,Deserialization of request body for creating PUT requests has to consider identifier derived from the URI,Minor
+69,"Instructions in ""Assigning Validators manually"" are not correct in reference documentation",Minor
+72,Allow overriding exposure defined at the type level on the method,Minor
+73,NullPointerException in ServletInvocableHandlerMethod.invokeAndHandle when using ExceptionHandler,Minor
+75,"Add another option to, by default, expose none of the repositories",Minor
+76,Obsolete Global CORS configuration example,Minor
+78,Potential NullPointerException in UriToEntityConverter,Minor
+80,PUT nulls Json read-only property,Minor
+83,Appending items to an array via JSON Patch doesn't work as defined in the RFC,Minor
+84,RepositoryRestHandlerMapping 2 arg constructor broken,Minor
+85,PUT requests fail for transient properties not backed by a field,Minor
+87,Invalid json schema generated by -data-rest,Minor
+92,TestRestTemplate doesn't take .data.rest.base-path in application.properties into account,Minor
+93,PUT does not remove nested properties,Minor
+95,Some PatchOperations are public and others are package-private.,Minor
+96,PUT error when merging a previously undefined array,Minor
+98,PUT does not apply new items in nested collection,Minor
+100,PUT empties nested collection,Minor
+104,PATCH for non-resource associations doesn't work as expected,Minor
+108,MappingAwarePageableArgumentResolver accidentally drops default Pageable returned from delegate PageableHandlerMethodArgumentResolver,Minor
+109,Fix order dependent DuplicateLinkListingTests,Minor
+110,User registered Hibernate 5 Jackson module should be preferred over the one registered by default,Minor
+111,Typo in EntityLookupConfiguration assertion message,Minor
+120,Sort mapping does not consider Jackson customizations in field names,Minor
+121,ResourceProcessor is not invoked if RepositoryEntityController does not return a subtype of Resources,Minor
+122,JsonUnwrapped annotation ignored,Minor
+124,"-data-rest  repository, transaction issue",Minor
+125,Allow excluding properties from being nullified in PUT requests,Minor
+127,CustomAcceptHeaderHttpServletRequest doesn't work as intended with  Framework 4.3.2,Minor
+128,Fix Solr integration tests after Jackson upgrade,Minor
+133,ControllerLinkBuilder does not work with new GetMapping,Minor
+134,Broken links to included code in conditionals reference documentation,Minor
+135,Broken links to included code in security reference documentation,Minor
+138,HAL browser redirect fails when proxied through Zuul,Minor
+140,"After upgrading  Data Hopper SR1, projection doesn't work",Minor
+141,Incorrect Version documentation,Minor
+142,Minor typo in reference documentation,Minor
+145,RepositoryConstraintViolationExceptionMessage produces inaccurate output,Minor
+146,Nested validation errors reported as top level ones,Minor
+147,Nested validation errors reported as top level ones ,Minor
+151,Downgrade to Jackson 2.6.5 until 2.7.2 is released,Minor
+153, Data REST throws NPE when exposing JSON Schema for a Groovy domai object,Minor
+156,embeddeds are not working with Jackson REQUIRE_SETTERS_FOR_GETTERS configuration,Minor
+158,ConcurrentModificationException,Minor
+159,HAL Browser default URI doesn't respect context path,Minor
+162,RepositoryExceptionHandler passes null instead of exception,Minor
+167,ProjectionSerializer doesn't react to unwrapping mode correctly,Minor
+168,Invalid JSON Schema for properties pointing to association resources,Minor
+170,resourceDescriptionMessageSource does not support UTF-8 property files,Minor
+171,ALPS profile does not reflect jackson customization (e.g. enableEnumTranslation=true),Minor
+173,Upgrading  Data Release Train to Gosling-RELEASE introduces Jackson errors,Minor
+174,Use consistent scheme for property titles in JSON Schema,Minor
+179,Typo in exception message in parameter checks for ParameterMetadata,Minor
+180,Has the page field been removed from paginated responses,Minor
+182,Fix gap in JSON Schema unit tests,Minor
+183,JSON Schema doesn't show id fields when they are exposed,Minor
+184,ALPS metadata should NOT show an id field unless its exposed in the configuration,Minor
+185,_embedded resource with curie namespace not rendering in HAL browser,Minor
+188,"Typo in docs of RepositoryEntityController::patchItemResource, Docs mention PUT",Trivial
+190,"For RepositoryRestController, appending B to URL passes security check.",Critical
+191,Non-public RepositoryEventHandler are not made accessible prior to reflective invocation,Minor
+195,Fix small typo in reference docs,Trivial
+197,ResourceSupportHttpMessageConverter does not reject generic type requests,Minor
+199,ETag getVersionInformation fails with proxied Entities for projections,Minor
+202,"""Content-Type: text/uri-list"" request fails for unexpanded URI templates",Minor
+204,_embedded sometimes missing in output JSON,Minor
+207,RepositorySearchesResource shouldn't expose domain type,Minor
+208,"ExcerptProjection not applied in on the response at POST, PUT or PATCH",Minor
+210,Excerpting works only within getting the list of items,Minor
+214,JSON Schema not rendered anymore after changes in default media type handling,Minor
+216,PUT request breaks failing to convert the identifier from long to String,Minor
+220,MappingResourceMetadata must not be exported,Minor
+221,Fix links to ALPS representation descriptors for associations,Minor
+222,"Custom RestResource path shows up as link href, but doesn't load data",Minor
+223,Reference documentation typo,Minor
+225,Fix one word typo in reference docs,Trivial
+226,Not convenient to search a repository by a related entity using links,Minor
+227,Rendering of lazy-loading proxies fails,Minor
+229,JSON Schema reports primitive numbers as object,Minor
+231,Repository controllers not invoked if resource is handled manually in dedicated media type,Minor
+233,Fix small typo in reference docs,Minor
+235,ALPS metadata exposes attributes that can be marked JsonIgnore,Minor
+236,JsonIgnored properties must not be updated in PUT requests,Minor
+242, Data Rest example module has no build file,Minor
+246,Make sure HAL HttpMessageConverter is ordered before the standard one,Minor
+258,Latest SNAPSHOT return multiple links attribute,Blocker
+259,Deleting a non-existing resource leads to NullPointerException in RepositoryEntityController,Minor
+261,ReflectionRepositoryInvoker doesn't apply conversion on invocation of an overridden delete(…) method,Minor
+264,java.lang.IllegalStateException: Ambiguous handler methods mapped for HTTP,Blocker
+266,Improvements in ResourceProcessorHandlerMethodReturnValueHandler,Minor
+270,ReflectionRepositoryInvoker fails to invoke non-public methods,Minor
+271,Fields with JsonProperty are ignored on serialization,Minor
+273,UriStringDeserializer should guard against URI templates submitted,Minor
+276,Illegal character '{' in URL when using projection and PUT request,Minor
+277,"""rel"" attribute of RestResource should be optional",Minor
+279,Reconfiguring baseUri isn't enough to change path to resolve URI links,Minor
+282,PaginationCustomizations are not applied ,Minor
+284,(Potentially) unwanted behaviour for self hrefs with projections,Minor
+286,RepositoryRelProvider is not registered,Minor
+290,NPE when calling count Queries in SD MongoDB Repositories,Minor
+292,links hrefs messed with pagination parameters,Minor
+293,SDR Schema follows json-schema?,Minor
+294, Data REST 2.0.0.RC1 artifacts missing in the milestone repository,Minor
+296,"2.0.RC1 breaks root controller (""/""). HAL-browser and the likes fail.",Minor
+299,Path.matches(…) should escape reference before trying to match it,Minor
+300,Crud or PagingAndSorting based repository entites still listed when findAll method is 'exported = false',Minor
+301,AOP proxying does not work for findOne(ID) method,Minor
+306,Embedded associations do not get rendered,Minor
+309,RestResource(exported=false) throws java.lang.IllegalArgumentException: Not an managed type: class java.lang.Object,Critical
+311,Limiting page size,Minor
+314,org.neo4j.graphdb.NotInTransactionException on DELETE,Blocker
+315,Update (Http PUT) operation should not create new entity,Minor
+316,Duplicate classes in  Data REST 2.0.0.BUILD-SNAPSHOT,Minor
+319,Master branch build is broken,Minor
+320,One-to-one relations in embedded Mongo Documents do not get rendered...,Critical
+321,PUT vs PATCH with ,Minor
+322,Improvment suggestion: Better support for read only repositories,Minor
+323,PUT of entity with links fails..,Minor
+324,Lost paging after upgrading to 1.1.0.M1,Minor
+325,Optional parameters for find method,Minor
+326,Updating value to NULL using  Data REST and PUT Method,Minor
+327,Sources for 1.1.0.M1 build are incorrect,Minor
+328, data rest with  XML mapping informations,Minor
+329,JsonIgnore and other Jackson annotations are ignored,Minor
+330,RepositoryEventHandler isn't work,Minor
+331,Could not initialize proxy - no Session,Critical
+333,RestResource exported=false ignored on methods,Minor
+334,Add support for non-CrudRepositories,Minor
+335,Build broken,Critical
+336,Controller implementations should not be annotated with Controller,Minor
+337,Unrelated entities accessible as if they were related,Minor
+345,NullPointerException in RepositoryEntityController,Minor
+349,Since latest build relations Failed to convert from type de.model.environment.Provider_$$_javassist_6 to type org.framework.hateoas.Resource,Blocker
+350,Executing /search/findEntityById?id=823892389 with x--data-compact+json does not return any value.,Minor
+351,"POST fails, when links : null",Blocker
+352,POST with Accept: application/x--data-compact+json returns Content-Type: application/json,Critical
+353,No IDs in href of objects displayed,Blocker
+354,Issue on Entity without Version attribute when using Eclipselink as provider,Minor
+356,No update on objects,Critical
+358,Page metadata not exposed anymore,Minor
+359,Could not write JSON: Infinite recursion (StackOverflowError) when trying to do a PUT,Blocker
+364,Searches which returns null gives NPE,Critical
+365,paging with parameters,Minor
+0, old version in use,Critical
+1, 1.2.17 is being used in -all - 5.16.3 : [CVE-2021-44228] [] [1.2.17] ,Critical
+4,Missing dependency for parsing <camelContext>,Critical
+6,Does  use the affected functionality within Xstream libraries for CVE-2020-26217,Critical
+7,BlackOut,Critical
+9,Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: org.framework.core.annotation.AnnotationUtils.isCandidateClass,Critical
+12, Broke due to Persistent Store is full,Critical
+14,Continously  java.net.SocketException: Connection reset,Critical
+15,Xerver Double Slash Authentication Bypass detected on  directory,Critical
+17,jolokia-core-1.6.0.jar is vulnerable to CVE-2018-10899,Critical
+20,"virtualSelectorCacheBrokerPlugin fails on ""browse"" action",Critical
+21,Security Vulnerabilities in  dependent libraries.,Critical
+22,Upgrade to Camel 2.24.1 and Jetty 9.4.19,Critical
+23,NPE when calling getAllJobs on JobScheduler MBean,Critical
+24,XSS in webconsole,Critical
+27,Java heap space And deadLock,Critical
+29,"One instance of ""org.apache..transport.nio.SelectorWorker$1"" loaded by ""<system class loader>"" occupies 1,701,178,192 (36.20 bytes. The memory is accumulated in one instance of ""byte[]"" loaded by ""<system class loader>"".",Critical
+31,Prevent OOM when recovering KahaDB and memory space is insufficient to load full page,Critical
+32,KahaDB store limit can be exceeded with durable subscribers.,Critical
+33,Issues with configuring authorizationPlugin,Critical
+34,KahaDB Recovery can experience a dangling transaction when prepare and commit occur on different data files.,Critical
+35,Load balance on 2 servers,Critical
+36,the  load balance,Critical
+38, load balance,Critical
+40, stop delivering messages,Critical
+52,GC goes crazy under load. Heap is filled up with TransportConnectionState objects,Critical
+54,Using amq 5.15.3 and camel bridging for dataservices 4.2 ,Critical
+55,Dead loop on log file reading,Critical
+56,Issue With Master and Slave Mode,Critical
+58,Project website does not render correctly over HTTPS in Firefox,Critical
+64,Broker fails to start complaining about missing/corrupt journal files,Critical
+66,Failover not working,Critical
+67,Slow events processing,Critical
+69,JDBC XA: Could not remove prepared transaction state from message,Critical
+71,MQTT over WebSocket doesn't work when WebSocket data frame contains partial or multiple MQTT control packets,Critical
+72,"IO exceptions causing Broker Service shutdown; When broker restarts, active-mq ignores the configured location for kahadb",Critical
+73,Async error occurred: java.lang.IllegalStateException: Cannot remove session that had not been registered:,Critical
+74, Restarts on the 5.13.1 version when catalina.sh stop invoked,Critical
+76," and java version ""1.6.0_45"" 64 bit",Critical
+77,Transport Connection failed: java.io.IOException: unable to create new native thread,Critical
+78,"[doc] re-work section ""Pooled Consumers and Prefetch"" on prefetch documentation",Critical
+79,Preallocation strategy of zeros can leak file descriptors causing crash,Critical
+82,"""Not enough cluster members have reported their update positions yet"" after restarting master repeatedly",Critical
+83,AMQP/JMS message transformation broken.,Critical
+84,Stuck messages to due of duplicated NetworkBrokerId?,Critical
+85,Deadlock in Failover transport and inactivity monitor thread,Critical
+87,"org.apache..SERIALIZABLE_PACKAGES=""*"" doesn't work",Critical
+88,HTTP transport broken in 5.12,Critical
+89,Wrong StorePercentUsage in leveldb replicas,Critical
+90,Installing camel-core in Karaf prevents -camel from deploying successfully,Critical
+92,Broker crashes after a few minutes of reading and writing messages,Critical
+94,LevelDB gets corrupted when Primary  server is shutdown while messages are queued to it,Critical
+95,DLQ'd message does not get DLQ'd again until broker restart,Critical
+97,Found (and fixed) 3 instances of impossible casts in the  code,Critical
+98,Unable to config maxThreadPoolSize in broker,Critical
+99, corrupted state when local disk fills up and Queues begin to buffer to KahaDB,Critical
+100,Potential Deadlock when a duplicate message is read from the store for the DLQ destination,Critical
+104,Request/Response with load balance broker Error : Requester received null message,Critical
+106,No option to throttle a producer which sends messages in a batch,Critical
+107, durable topic subscribers not able to receive new messages after running for awhile,Critical
+108,NullPointerException in SelectorAwareVirtualTopicInterceptor,Critical
+110,AMQ hangs at socket write in 3.2.2 version under solaris os,Critical
+111, OSGi metadata excludes compatibility with  4.X,Critical
+112,stomp deadlock,Critical
+116,Reconnection attempt logic seems wrong in JmsConnector#doInitializeConnection,Critical
+117,allowLinkStealing option is not working when using mqtt over websocket ,Critical
+119,Fake AMQP connections remain in  and cause denial of service,Critical
+121,Wrong with role-based authorization when using right permission,Critical
+125,VMTransport uses broken double checked locking,Critical
+126, failed to start with KahaDB reporting corrupt journal records and throwing NegativeArraySizeException,Critical
+127,Deadlock between FilePendingMessageCursor usage change and incoming send operations.,Critical
+128,Severe memory leak in the MQTT connector,Critical
+130,org.apache..leveldb.CountDownFuture,Critical
+132,Failed to add Connection ID,Critical
+133,Infinite loop in log replay with Replicated LevelDB,Critical
+136,Inifinite loop on replicated LevelDB during new Master election,Critical
+137,Shared Filesystem Master/Slave using NFSv4 allows both brokers become active at the same time,Critical
+139,AMQP Memory leaks in the AMQP Protocol converter on sender link close,Critical
+140,"AMQP transaction may fail to commit, or process unexpected messages, if consumer acks are not in a single unbroken sequential range",Critical
+141,leveldb failed to page in queue messages,Critical
+142,"KahaDB error at startup ""Looking for key N but not found in fileMap""",Critical
+144,Using authorization plugin with MQTT causes ClassCastException on client reconnect. ,Critical
+145,persistJMSRedelivered feature breaks the ability for KahaDB to compact its journal files,Critical
+146,QueueBrowser with expired messages hangs until woken by expired messages background job,Critical
+147,LevelDBClient operation failed. NullPointerException after entering recovery mode,Critical
+148,EOFException when sending char in MapMessage between Java and C++,Critical
+152,NullPointerException in DemandForwardingBridgeSupport.collectBrokerInfos,Critical
+153,MQTT Transport codec does not properly deal with partial read of frame header,Critical
+155,Stuck messages and CPU churn when aborted transacted message expires,Critical
+156,Problem handling connections from multiple AMQP clients in ,Critical
+157,Memory leak in  JMX objects,Critical
+158,Link stealing doesn't work for MQTT + Webscokets,Critical
+160,Cannot use the JDBCIOExceptionHandler when kahadb is configured with lease-database-locker,Critical
+161,Wildcard subscriptions bypass Authentication / Authorization,Critical
+162,Lost Message with LevelDB,Critical
+165,Cannot consume messages. Failed to fill batch . cased by NegativeArraySizeException,Critical
+166," replicatedLevelDB cluster breaks, all nodes stop listening",Critical
+167,compositeQueue and deadLetterStrategy: messages disappearing,Critical
+168,Session.commit() hangs when amqp+nio+ssl is used,Critical
+169,JMSClientNioTest fails intermittently,Critical
+171,Session.commit() hangs when amqp+nio is used,Critical
+174,Old Web Admin console does not manage  - new parameter  messageTTL consumerTTL connections.jsp and connections Panel display error messages,Critical
+176,leveldbjni platform jars not included in binary release,Critical
+177,getting javax.el.PropertyNotFoundException,Critical
+178,our inbound MDP losing connection with MQ and not able to reconnect. ,Critical
+179,Corrupted KahaDB store: java.lang.NegativeArraySizeException,Critical
+180,Queue Messages lost after read timeout on REST API.,Critical
+181,Download page must not link to snapshots / nightly builds,Critical
+182,LevelDB can get to a corrupt state when using XA transactions,Critical
+183,java.lang.ClassCastException: org.apache..store.kahadb.data.KahaTraceCommand cannot be cast to org.apache..store.kahadb.data.KahaAddMessageCommand,Critical
+184,LevelDB corrupted when in a replication cluster,Critical
+186,Rar losing messages when there is a XA trx timeout (jboss) ,Critical
+187,Scheduler discards overdue messages on startup,Critical
+189,-blueprint is missing,Critical
+190,-camel hosted on central  repository is not a bundle,Critical
+191,REST MessageServlet swallowing Messages on high traffic topic,Critical
+192,QueueBrowser hangs when browsing large queues,Critical
+196,Deadlock can occur on dispose of TempQueue that contains expired Messages,Critical
+197,Client doesn't fail over to other broker if updateClusterClientsOnRemove = true,Critical
+200,Persistent message loss when JMS durable subscriber reconnects regardless of message store impl.,Critical
+203,Client Connections Not Displayed on Admin Webpage,Critical
+204, doesn't start using the service wrapper,Critical
+205,Kahadb and  delete files unexpectedly,Critical
+206,Client Hang on large payloads of size 1-4MB,Critical
+207,REOPEN - javax.jms.JMSException: The resource is allready being used in transaction context. ,Critical
+208,No connection could be found for ID NC_,Critical
+209,Messages stuck and never gets processed,Critical
+210,Endless loop when received incorrect AMQP message,Critical
+211,-web-console unusable in OSGi due to massive exports,Critical
+212,Stuck Message Issue with  5.6,Critical
+214,"With JDBC persistence feature for AMQ, webconsole does not show up any queues ,but just a blank table.",Critical
+215,Unable to load custom properties from credentials.properties file located in conf folder of  installation directory,Critical
+216,"DiscoveryNetworkConnector can lose track of active bridges, resulting in permanent bridge failure or continued attempts to re-connect existing bridges",Critical
+217,Race condition in SimpleDiscoveryAgent creates multiple concurrent threads attempting to connect to the same bridge --- can result in deadlock,Critical
+219,Semi-stuck queue until server restart,Critical
+221,Broker freezes on peak burst producer persistent message delivery,Critical
+222,Producer hang when tempStorage is full if enable flow control for non-persistent queue,Critical
+223,InactivityIOException exception leading to ServiceMix not functioning,Critical
+224,LeaseDatabaseLocker can not be changed from 5 sec poll,Critical
+227,sizePrefixDisabled and/or maxFrameSize change in AcriveMq 5.6 broke FilePendingMessageCursor for big messages,Critical
+228,Restarting of persistent embedded broker causing Failed to fill batch error,Critical
+230,Tomcat7 with -5.6 or -5.7 starts with error,Critical
+232,Instance of BlobTransferPolicy and its URL are being shared among multiple messages,Critical
+234,Overlapping PList iterators can read wrong data or throw exceptions about chunk streams not existing.,Critical
+236,jms.redeliveryPolicy.redeliveryDelay and jms.redeliveryPolicy.initialRedeliveryDelay options cause a failure on startup,Critical
+237,Performance issue with delay policy in DestinationBridge.onMessage,Critical
+239,Restful HTTP MessageServlet causing trouble.  May be a garbage collection issue.,Critical
+240,Durable subscribers receiving duplicate messages,Critical
+242,kahadb log files not getting cleaned up,Critical
+244,The body of StompFrame is truncated to 64 chars,Critical
+248,Deadlock on Broker when JMX is enabled,Critical
+249, broker stops functioning,Critical
+252,Tracked command IOException causes FailoverTransport to hang until failure occurs for untracked command,Critical
+254,Not all messages will be acknowledged when optimizeAcknowledge is true,Critical
+255,Error when starting  :Transport Connector could not be registered in JMX: Failed to bind to server socket,Critical
+256,JVM appears hung: Timed out waiting for signal from JVM error when starting ,Critical
+257,JDBC Master/Slave : Slave cannot acquire lock when the master loose database connection.,Critical
+259,IndexOutOfBoundsException in org.apache..store.kahadb.MessageDatabase.getFirstInProgressTxLocation(),Critical
+260,Unable to start broker after KahaDB crash,Critical
+261,NullPointerException in TransportConnection,Critical
+262,Garbage Collection does not work if mirroredQueue active -> OOM,Critical
+263,PooledSession - Can cause memory leak in case many consumers is created by the session,Critical
+265,Calling Connection.close() on interrupted thread generates InterruptedIOException and leaks Connection,Critical
+266,Rebalance does not work well(reproductive),Critical
+267,"Prefetch state can be incorrect when transacted redelivery of duplicates occurs, causing stalled queue",Critical
+268,MessageConsumer auto ack of duplicates always sends a standard ack,Critical
+275,"Messages get stuck in the queue for some client sessions, ""Dispatched Queue"" grows but ""Dequeues"" doesn't move",Critical
+276,Contention on a mutex during a stress when using SimpleAuthenticationPlugin,Critical
+277,Zombie  Connection Dispatcher threads - seems to consume all process File Descriptors (FD leak),Critical
+279,Exclusive consumers do not rollback session when switched after master slave failover,Critical
+280,Broker can lose messages during pure master/slave failover when master undergoes a controlled shutdown,Critical
+283,Messages received after unsubscribe/receipt using STOMP protocol.,Critical
+284,"Message scheduled via cron to a broker with persistence enabled, is only delivered once",Critical
+286," broker hangs after sending many large messages with a TTL, and no DLQ",Critical
+287,Wire format negotiation timeout: peer did not send his wire format,Critical
+288,duplicate messages on Temporary Topics in network of brokers,Critical
+289,Slave broker acquires lock file when Master is still alive (shared file system master/slave setup),Critical
+290,"Can't use updateURIsURL, because the entry is missing in the xsd and so the  instance cannot start",Critical
+292,"""InactivityMonitor Async Task"" threads leaking",Critical
+293,OutOfMemory error on  startup,Critical
+294,persistent messages disappear (lost!!) upon expiry rather than ending up in a DLQ,Critical
+295,Closing a VMTransport can cause all other VMTransports to be prematurely closed,Critical
+296,Race condition in  Journal Checkpoint worker thread cleanup leads to multiple running instances,Critical
+298,Network bridge causes deadlock on queue/topic when message dispatch and consumer registration overlap.,Critical
+299,Same message redelivered again even though moved to a different queue using web console,Critical
+300,kahaDB 3 fails to start after server VM reset,Critical
+301,Queue stalls after Job Scheduler component shuts down.,Critical
+302,Failed to page in more queue messages - Cannot consume messages,Critical
+304,"JRUBY  CLIENT: Exception in thread "" Session Task"" java.lang.StackOverflowError",Critical
+305,New clients unable to connect to broker while SubscriptionRecoveryPolicy is running,Critical
+306,DiscoveryNetworkConnector and IPv6,Critical
+308,Consumers hang when flow control is enabled - unable to proceed?,Critical
+309,Kahadb,Critical
+310,Time Synchronization Solution,Critical
+311, broker processing slows with consumption from large store,Critical
+312,"HttpTunnelServlet leaks BlockingQueueTransport objects, causing eventual OOM on heap space",Critical
+314, leaks memory for a typical request/response pattern (temporary queues),Critical
+315, broker fails to start due to java.lang.NullPointerException,Critical
+316,"Message getting stuck on queue, leading to KahaDB log files not being deleted and disk running out of space",Critical
+318,bin/ shell script swallows startup errors,Critical
+321,Clients are sent messages out of producer-order,Critical
+322,Kaha persistence adapter not closing opend file after lock check in secondery server: shared file system mode,Critical
+323,NullPointerException in kahadb linked list,Critical
+326,a bug when send time out,Critical
+327,ConnectionInfo does not override toString to stop logging actual Password in case of Warning. ,Critical
+328,Handle leak when out-of-memory,Critical
+329,ConcurrentModificationException while sending messages to composite destinations,Critical
+331,"When running multiple brokers on the same box, ""-admin stop"" command on a downed instance will shutdown other instances",Critical
+332,Session should throw JMSException instead of IllegalStateException if connection is closed,Critical
+335, not preserving Message Order,Critical
+337,KahaDB rollback fails when connection is closed afterwards,Critical
+338,KahaDB doesn't clean up old files,Critical
+340,Apache  is prone to XSS Vulnerability,Critical
+341,BlobMessages are not deleted after delivery,Critical
+342,Cannot rename file,Critical
+343,Apache  is prone to source code disclosure vulnerability.,Critical
+344,DefaultJDBCAdapter returns incorrect value that prevents  from starting.,Critical
+346,Producer Flow Control seems to be broken,Critical
+349,"Exception on setting ""sendFailIfNoSpaceAfterTimeout""",Critical
+350,Persistent Cross-site Scripting in /createDesitnation.action [JMSDestination parameter],Critical
+351,Persistent Cross-site Scripting in /createDesitnation.action [JMSDestination parameter],Critical
+353,Memory leak in network of brokers - the number of ConsumerInfo objects increases,Critical
+354,OutOfMemory provoked by Advisory messages,Critical
+355,QueueBrowser cause duplicate message delivery on network broker after restart,Critical
+356,Client stops receiving messages from topic after about 30 minutes of inactivity,Critical
+357,Broker goes down when database is restarted or goes down,Critical
+359,Channel was inactive for too long,Critical
+361,Hangs possible because of Queue.doPageIn,Critical
+362,Failover transport memory leak on rollback,Critical
+363," doesnt accept connections, and displays error like "" Transport ERROR: Could not accept conenctions ,connection reset. Also the message count is not displayed properly. The messages received is less than messages passed.",Critical
+364, performance issues when there are more than 100 queue'd up messages,Critical
+368,Setting keepAlive through URL does nothing,Critical
+373,"Number of messages when browsing queue is different to ""Number Of Pending Messages"" in queue list",Critical
+375,-exceptions,Critical
+376,Modifying an existing Durable subscription blocks that subscription from receiving messages,Critical
+378,The MaximumPendingMessageLimit option is doesn't work  in .Net,Critical
+381," with STOMP producer, multiple consumers --  doesn't distribute correct messages to additional consumer AND Delivers messages out of order to newly connecting consumer.",Critical
+383,An application but always throw out of memory exception ,Critical
+384,Message expriation causes that receiver gets stuck,Critical
+385,AMQ dies after few hour with OutOfMemoryErrors,Critical
+386,Reply queue performance hit upgrading to 5.2,Critical
+387,Multicast transport does not work when for a consumer or producer,Critical
+388,Failover transport should not hang on startup if it cannot connect,Critical
+389,OutOfMemoryError after 9505925 persistent messages,Critical
+391,Deadlock in org.apache..usage.Usage,Critical
+392,Deadlock on producerWindow.waitForSpace() in MessageProducer,Critical
+393,More than one Thread can be created for a JMS Session,Critical
+394,durable subscriber gets stuck while using persistent delivery mode and client acknowledgment with session.recover().,Critical
+398,Systems hang due to inability to timeout socket write operation,Critical
+399,MemoryUsage stays at 100used forever after all messages are sent,Critical
+400,Negative queue size (reproducible),Critical
+402,AbstractStoreCursor.size gets out of synch with Store size and blocks consumers,Critical
+403,Kaha store can not retrieve messages with non ASCII charcaters,Critical
+405,Non-transactional and exclusive consumer may receive messages out-of-order.,Critical
+406,>1 transactional and exclusive consumers receiving messages at the same time.,Critical
+407,"consumer stop consuming message when using selector,what's the problem?",Critical
+408,Deadlock in broker can occur when optimised dispatch is true,Critical
+409,ArrayIndexOutOfBoundsException on restart of broker with durable subscriptions,Critical
+410,Master broker is down when slave broker is crashed,Critical
+412,"JCONSOLE: Graph Feature doesn't work for QueueSize, Dequeuecount, etc.",Critical
+414,HashIndex leaks file handles when destination is removed,Critical
+417,Lost messages after broker recovery,Critical
+418,Topic messages cause MemoryUsage to increase slowly over time,Critical
+419,OOM under minimal load,Critical
+421,Https JMSBridgeConnector failed to recover due to an infinite loop in Journal cleanup.,Critical
+423, stops dispatching messages aborting transaction (STOMP),Critical
+424,Memory leak in broker - Temporary Queue related (fix proposal included),Critical
+425,Journal files don't get cleaned up,Critical
+427, 4.1.2 packaged with geronimo-jms_1.1_spec-1.1.1.jar that is not Java 1.4 compatible,Critical
+428,Resource Adapter's ManagedSessionProxy.setMessageListener is commented out.,Critical
+431,Exception on publishing persistent (disk persistence) message once consumer comes up.,Critical
+433,Error with virtual topic with more than one consumer name,Critical
+436,AmqPersistenceAdapter throws java.io.IOException: Failed to read to journal for: offset,Critical
+437,PooledTaskRunner fails to shutdown after task throws exception,Critical
+441,Number of items in Topic queue never empties out (Queue Size in JMX for every topic seems to be > 0 all the time),Critical
+442,Closing an  connection causes 1.5 JVM to crash,Critical
+444,ArrayOutOfBoundsException in InputStream,Critical
+446,Unescaped text messages in message detail,Critical
+447,Can not unsubscribe topic,Critical
+448,HasPage overflow results in indexOutOfBoundsException in AMQStore,Critical
+449,InactivityMonitor incorrectly assumes there isn't activity on a Transport,Critical
+451,Channel was inactive for too long.,Critical
+453,deadlock in Usage & Topic,Critical
+455,Deadlock between Transport and Scheduler,Critical
+456,Deadlock between FilePendingMessageCursor and MemoryUsage,Critical
+457,Duplicate messages dispatched when using AMQ Store,Critical
+458,RecoveryListenerAdapter - Message id ID... could not be recovered from the data store!,Critical
+459,When in XA Transaction Active-MQ integrated with OpenEJB hangs in the isSameRM method of LocalAndXATransaction. ,Critical
+460,The connection is already closed at MDB's rollback in ra,Critical
+463,Stomp address connections remain active,Critical
+468,AMQ 4.1 branch faied to build,Critical
+469,Failing to acquire exclusive lock - MySQL and other strange errors,Critical
+470,Scheduler.cancel uses incorrect argument to shutdown threads,Critical
+471,Connections are not being properly disposed of.,Critical
+477,Start Broker SQL Exception,Critical
+479,Client deadlock during failover,Critical
+481,"Closing consumer does not free server memory, server heap overflows",Critical
+482,Memory usage jumps > 100with durable subscription and stays there,Critical
+483,Some tools from Command line not works properly,Critical
+484,Incorrect redelivery behavior and counters,Critical
+485,AMQ Stops dispatching messages after a period of time without errors/warnings,Critical
+486,Tomcat JVM hangs when it tried to get ConnectionFactory object,Critical
+487,Build of current trunk with 2 fails,Critical
+489,Messages are read from queue but not removed,Critical
+490,Problem with subscription passing with network of brokers in AMQ 4.0.2,Critical
+492,StreamMessage should support large text format in writeString.,Critical
+495,Exception thrown when compiling -optional.,Critical
+496,SocketWrite hangs indefinitely,Critical
+497,POM error means I can't use a dependency on 4.1-incubator-SNAPSHOT,Critical
+498,create a super pom for tooling projects in  so we can create a nightly build of the various  plugins,Critical
+501,ConduitBridge can malfunction when first of a set of consumers goes away,Critical
+503,ConnectionDotFileInterceptor not thread safe.,Critical
+504,Broker is not delivering all messages to slow consumer,Critical
+505,Possible 4.0 consumer client memory leak?,Critical
+506,Network connections do not reconnect when using static: with failover=true,Critical
+507,Cannot add a new connector using ManagerGBean,Critical
+510,Multiple durable topics don't work with network of brokers,Critical
+512,Memory leak in ManagedRegionBroker,Critical
+515,Infinite Loop after message resend,Critical
+518,Openwire client hangs after receiving some hundred messages,Critical
+519,Broker is not re-connecting to a network of brokers after going down and then being brought back up,Critical
+521,Slave does not detect master failover when master is solaris and slave on windows,Critical
+524,4.0 M4 NullPointerException while shutting down,Critical
+525,Oracle JDBC Driver error as Persistance backend,Critical
+529,Bidirectional channel that is sending data each other in two AciveMQ cann't resume when network was interrupt and resumed.,Critical
+530,The  Channel between two AMQ Server Cann't resume when network is after interrupted.,Critical
+532,The   Channel between two AMQ Server Cann't  resume when network is after interrupted.,Critical
+533,Messages are sometimes sent twice,Critical
+537,Can't recive message when I use mysql with driver mysql-connector-java-3.1.8-bin.jar and mysql4.1.15,Critical
+538,NPE in  server,Critical
+539,Database Connection Leaks,Critical
+542,Leaking pooled threads,Critical
+543,memory leak in JMSStatsImpl,Critical
+544,Multicast is broken and going into infinite loop due to ack problems,Critical
+546,Memory Leak in TcpTransportServerChannel,Critical
+548,Reliable reconnection process is broken,Critical
+549,Server reconnect is not detected with peer protocol (2 peer setup only),Critical
+550,lost messages when  with reliable protocol is used,Critical
+551,Messages are being lost when using the JCA Connector,Critical
+552,Durable subscriptions are not working in the Resource Adapter,Critical
+554,TransportChannelSupport have concurrent problem.,Critical
+556, / jboss connector - transactions fail,Critical
+558,Connector doesn't use proper JavaBean property names in deployment descriptor,Critical
+560,JBoss Integration: XA transactions not working,Critical
+561,-ra doesn't adhere to the 'Equality Constraints' section of the JCA Spec,Critical
+564,ConnectionInfo is not resent on reconnect leaving subscriptions dead,Critical
+2, package error,Trivial
+3, package error,Trivial
+5,VirtualSelectorCacheBrokerPlugin throws false positive exception,Blocker
+8,ProviderVersion being reported as 5.15.10 in version 5.16.0,Trivial
+10,Rename occurences of POSION to POISON,Trivial
+11,Cannot install  on karaf 4.2.9,Blocker
+13, producer thread hangs on setXid,Blocker
+16, throws concurrentModificationException in failovertransport class,Blocker
+18,Transport Connection to: tcp://172.17.30.105:50132 failed: java.net.SocketException: Connection reset by peer: socket write error | org.apache..broker.TransportConnection.Transport | Async Exception Handler,Blocker
+19, truststore client.ts not working,Blocker
+25,Docker container having  restart making Queues Tab on Console inaccessible,Blocker
+26,Past Release Downloads Does Not Work,Blocker
+28,Network of Brokers: cannot forward messages back to the broker from which they came,Blocker
+30,Inserting Bouncy Castle Provider Early in Java Security Provider Chain Breaks KeyStore Loading,Blocker
+37, 5.15.4 jolokia.jar which has one high severity CVE against it.,Blocker
+39,ProducerBrokerExchange.getPercentageBlocked() throws ArithmeticException (divide by zero),Trivial
+41,Getting error after some time in ,Blocker
+42, 5.15.4 xercesImpl-2.11.0.jar which has one high severity CVE against it.,Blocker
+43, 5.15.4 -ra-5.15.4.jar which has two high severity CVEs against it.,Blocker
+44, 5.15.4 tomcat-servlet-api-8.0.24.jar  which has four high severity CVEs against it.,Blocker
+45, 5.15.4 activeio-core-3.1.4.jar  which has three high severity CVEs against it.,Blocker
+46, 5.15.4 jackson-databind-2.9.4.jar which has one high severity CVEs against it.,Blocker
+47, 5.15.4 hadoop-core-1.0.0.jar which has two high severity CVEs against it.,Blocker
+48, 5.15.4 commons-beanutils-core-1.8.0.jar which has one high severity CVE against it.,Blocker
+49, 5.15.4 contains scala-library-2.11.0.jar which has one high severity CVE against it.,Blocker
+50, 5.15.4 contains -protobuf-1.1.jar which has three high severity CVEs against it.Discovered by adding OWASP Dependency check into  pom.xml and running the OWASP report,Blocker
+51, 5.15.4 contains -camel-5.15.4.jar wich has two high severity CVEs against it,Blocker
+53,Number Of Pending Messages Did Not Reflect Its Queues Number,Blocker
+57,Cannot read queues from machine,Blocker
+59,Getting errors after upgrading  jars from 5.5.1 to 5.13.1,Blocker
+60,Getting error: cannot find symbol  [javac] entry.setAdvisdoryForFastProducers(true); with  5.13.0,Blocker
+61,Getting error: cannot find symbol  [javac] entry.setAdvisdoryForFastProducers(true); with  5.13.0,Blocker
+62,"not seeing -core-5.13.1.jar in apache--5.13.0-bin.zip, apache--5.14.0-bin.zip",Blocker
+63,Unable to find relative -core-5.5.1.jar libray with latest  5.13.0 binaries,Blocker
+65,ConnectionFactory options trafficClass and wireFormat.prefixPacketSize are not accepted by the OpenWire JMS library.,Trivial
+68,On  web site's Contributing page incorrect issue tracker URLs,Trivial
+70,org.json is cat-x - needs to be removed,Blocker
+75,Logger message,Trivial
+80,Return inside finally,Trivial
+81,Missing check for null parameter in equals(),Trivial
+86,Typo in  unix script,Trivial
+91,Provide the DispatchAsync value on Subscriptions to the SubscriptionViewMBean,Trivial
+93, webconsole breaks when supressMBean is used,Blocker
+96,Not able start  5.13.0,Blocker
+101,Unable to configure failover for nio+ssl,Blocker
+102,SASL PLAIN auth with AMQP doesn't take authzid into account,Blocker
+103,Unable to apply policy when set refreshInterval=-1 for cachedLDAPAuthorizationMap,Blocker
+105, broker exposing data persistent layer when using oracle database,Trivial
+109,test script typo,Trivial
+113,The Queue got hanged with a scenario said in description with version 5.11.1 but this works with version 5.5.1,Blocker
+114,".apache.org/mqtt.html page is saying ""Can't find brush for : xml""",Blocker
+115,"Enable ""getRemoteAddress()"" method in WebSocket Requests",Trivial
+118,JDBC store - pending high priority messages batch cannot be consumed after low priority message batch ,Blocker
+120, browse shows limit messages,Trivial
+122,failover Protocol,Blocker
+123,Incorrect Task Usage mentioned for amq browse command for the msgsel,Trivial
+124,swiss army knife example broken,Trivial
+129,KahaDB not cleaning up log files,Blocker
+131,Support selective MBean creation,Blocker
+134,Failover transport should not hang on startup if it cannot connect & Failover transport timeout options overrides reconnection strategy,Blocker
+135,-pool - Either adds new mbeans or add/remove pair of mbean for each producer in use,Blocker
+138,Create Release 5.10.1,Trivial
+143,updateClusterFilter doc sample; not using correct regular expression,Trivial
+149, Message getProperty and setProperty inconsistent behaviour,Trivial
+150,Incorrect Documentation  in org.apache..management.SizeStatisticImpl,Trivial
+151,"LoggingBrokerPluggin, configuration variable logMessageEvents is not used",Trivial
+154,MQTT does to calls to unsubscribe on a duplicate subscription request.,Trivial
+159,5.8.0 Source Files Missing from sources jar and zip,Trivial
+163,Broker and clients hang,Blocker
+164,MQTT server connections are not thread safe,Blocker
+170,BrokerRedeliveryTest.testNoScheduledRedeliveryOfExpired fails intermittently,Trivial
+172,Upgrade from  5.7 to 5.9,Blocker
+173,Dispatching large messages over AMQP is very slow.,Blocker
+175,Web Console - java.lang.OutOfMemoryError: Java heap space - while browsing deep queues,Blocker
+185,Failed to deploy AMQ to Glassfish 4,Blocker
+188,Timeout for StompLoadTest.testStompUnloadLoad is too long,Trivial
+193,broken link at http://svn.apache.org/repos/asf//trunk/-core/src/main/resources/META-INF/services/org/apache//store/jdbc/,Trivial
+194,NumberFormatException when parsing JMSXProducerTXID,Blocker
+195,"The -admin script cannot connect to the local process , can not get the jmx url",Trivial
+198,Persistent topic messages not stored in store,Blocker
+199,"ConnectionFatory should populate ""consumerFailoverRedeliveryWaitPeriod""",Trivial
+201,Web console do not show connections info,Trivial
+202,SocketException: Connection reset exception occurred in  for Bulk message producer,Blocker
+213,Error in XML in documentation - lease database locker,Trivial
+218,KahaDBTransactionStore.removeAyncMessage may cancel addMessage when in transaction leading to unpersisted messages,Blocker
+220,"--plugin fails to resolve path to XBean file in multi-module builds, and does not have a skip flag",Blocker
+225,The perfharness-.sh script has 5.0-SNAPSHOT as version number,Trivial
+226,Consumers in Client Ack sessions can fail to ack expired messages in some cases,Blocker
+229,catstomp.rb does not work anymore,Trivial
+231,BrokerService TempUsage and StoreUsage Default Values Are Incorrect,Trivial
+233,"For JMSUsecaseTest, incompatible types found   : javax.jms.Message required: org.apache..Message ",Trivial
+235,Intended delivery mode for JMSUsecaseTest is not tested,Trivial
+238,Messages are not acknowelge and inflight count goes up till max memory is reached for topic,Blocker
+241, 5.6 - RAR deployment is not working on JBoss6,Blocker
+243,test units should run discovery mechanism via loopback device,Trivial
+245,Incorrect variable name in bin/,Trivial
+246,Dead api links in on one of the Failover Transport doc,Trivial
+247,Composite destinations break simple authorisation through role aggregation,Blocker
+250,Suspicious NPE in log when network bridge cannot be established and loggingBrokerPlugin configured,Trivial
+251,"""-admin browse"" help command prints incorrect argument name for password in sample usage ",Trivial
+253,NPE exception when querying a starting broker use JMX program ,Trivial
+258,NPE when KahaDB fails to store to Journal with EOFException,Trivial
+264,The InactivityMonitor onException call interrupts itself when the readCheckTime was exceeded.,Trivial
+269,NullPointerException in TraceBrokerPath plugin.,Trivial
+270,MessageListenerServlet does not clear the timer on destroy,Trivial
+271,Messages getting lost on the server startup. Please look at it ASAP.,Blocker
+272,Too many open files for db log,Blocker
+273, 5.4.2 - Message stuck due to connection hung for amq client,Blocker
+274,"Unable to pick up messages anymore, messages are lost - Looking for key xyz but not found in fileMap",Blocker
+278,AbstractRegion.java has incorrect null check in contructor,Trivial
+281,amq.js initHandler() method swallows first message received,Trivial
+282,Update reference to Jencks project ,Trivial
+285,Prioritizing of messages isn't applied to all messages during test.,Trivial
+291,After running for some days  queues getting inactive.,Blocker
+297,Sources missing in --5.4.2-sources.jar,Trivial
+303,"Typo ""DispachedCounter"" in response when running -admin",Trivial
+307,ConnectionState.getTempDesinations() should be renamed to ConnectionState.getTempDestinations(),Trivial
+313,Default jetty configuration for camel applicationContext.xml - use .home instead of .base,Trivial
+317,After a performance the server stop working. No errors send to the client. ,Blocker
+319,'s webapps based index.html file needs refinements.,Trivial
+320,java.io.EOFException: Chunk stream does not exist at page on broker start,Blocker
+324,Repeating error of client on reconnect,Blocker
+325,Problems with starting ApacheMQ Broker,Blocker
+330,Set ClientID - InvalidClientIDException with http transport,Blocker
+333,Database lock driver override not found for : [oracle_jdbc_driver].  Will use default implementation.,Blocker
+334,KEYS file does not include A2F9E313 which was used to sign the 5.3.2 release,Blocker
+336,HTTPS transportConnector does not create a SslSocket but a plain text one,Blocker
+339,init.d script fails if RUN_AS_GROUP not defined due to typo,Trivial
+345,set findMessageStatement cause problem for JDBCPersistenceAdapter due to error in Statements.java,Blocker
+347,Space character inserted before subscriptionID in durable subscription info,Trivial
+348,Deadlock during FailoverTransport interruption,Blocker
+352,Locale dependent toUpperCase in IntrospectionSupport.,Trivial
+358,Message broker won't come back when the databse goes offline and comes back online,Blocker
+360,NullPointer Exception Occurs when using producer flow control,Blocker
+365,Message is sent to wrong broker in network of brokers inspite of using the Message selector,Blocker
+366,"JMX property ""QueueSize"" for Topics keeps increasing and does not seem to reflect the number of messages on the topic.",Trivial
+367,  declaration broken,Trivial
+369,Ensure -fileserver web.xml conforms to schema,Trivial
+370,Non temporary destination removing failure,Blocker
+371,"Infinite loop: WARN  PrefetchSubscription           - Ack before disaptch, waiting for recovery dispatch: MessageAck",Blocker
+372,max,Blocker
+374,Messages keep hanging in JDBCStore without delivery to client,Trivial
+377, producer/consumer hangs when one of the consumer didn't respond,Blocker
+379,MessageConsumer.unconsumedMessages continues to grow,Blocker
+380,Network of pure master/slave hang after large number of messages,Blocker
+382,failover option maxReconnectAttempts is not working.,Blocker
+390,Wrong/missing OSGi metadata in -core and kahadb,Trivial
+395,Message grouping not honored when consumers started with existing messages,Blocker
+396,Error While starting AMQ,Blocker
+397,"META-INF/services files ended up in wrong bundle (jar), missing imports",Trivial
+401,AMQ broker does not honour consumer priority setting on queue,Blocker
+404, QueueViewMBean.retryMessage() often seems to fail without retrying,Blocker
+411,Deadlock in AMQMessageStore when using transactions,Blocker
+413,Failing to close a connection leaves consumers behind that prevent new consumers receiving messages,Blocker
+415,Network of pure master/slave synchronization issue,Blocker
+416, inflightcount queue statistics aren't decremented when using transactions or when messages are sent to the DLQ,Trivial
+420,"Single producer and multiple consumer processes, some consumers stop getting messages.",Blocker
+422,"MESSAGE frame should not have the ""receipt"" header",Trivial
+426, broker in JBoss hangs when receiving > 25k messages,Blocker
+429, 5.1.0 runs out of file descriptors with lots of 'CLOSE_WAIT' sockets,Blocker
+430,"out of date javadoc for org.apache..ConnectionFactory.setDispatchAsync param, default value is true on trunk",Trivial
+432,activeio-core SNAPSHOT version in 5.0.0 release,Blocker
+434,possible dynamic instability in AMQStore indexes,Blocker
+435,Problem in Kaha persistence with file name lengths and collisions during persistence,Blocker
+438,Broker Network Deadlocking,Blocker
+439, version 5.X - java 5 - memory leaks ,Blocker
+440,EOFExceptions and Broken Pipe exceptions everywhere in 5.0 (my services seem to run fine under 4.1 and 4.1.1 and somewhat better in 5.1-SNAPSHOT [if you don't count the queue size problem] which is critical),Blocker
+443,Inactivity Monitor: org.apache..transport.InactivityIOException: Channel was inactive for too long,Blocker
+445,"Exception String from BrokerFactory has a typo - ""Could load "" should presumably read ""Could not load """,Trivial
+450,"Thread name spelling mistake: ""AcitveMQ Connection Worker""",Trivial
+452,AMQ Store deletes data files which are in use,Blocker
+454,Unable to deliver messages through a mixed version broker network,Blocker
+461,XBean annotation 'resourceAdapter' is specified twice,Trivial
+462,spelling error,Trivial
+464,got an exception when running AMQStackOverFlowTest which causes the test suite to hang!,Blocker
+465,STOMP connector throws away prefetched messages when client disconnects,Blocker
+466,Pure Master/Slave configuration doesn't work,Blocker
+467,"Publishing to temporary Queues and advisorySupport=""false""",Blocker
+472,"java.lang.ClassCastException: org.apache..ConnectionConsumer, when trying to publish to a topic",Blocker
+473," 4.1 has crept in some Java 5 APIs, which prevent it from being used on Java 1.4 JVMs",Blocker
+474, AspectJ autoproxying breaks ManagedConnectionFactory injection,Blocker
+475,activem.conf: Use ${.base} instead of ..,Trivial
+476,Kaha DB hangs on restart,Blocker
+478,Deadlock in PrefetchSubscription,Blocker
+480,"Error when doing a "" site"" in -core",Blocker
+488,Network of brokers duplicates events,Blocker
+491,transportConnector using multicast,Blocker
+493,Default .properties has stdout enabled and not the out file appender,Trivial
+494,Default .xml should not have snippet stuff in it,Trivial
+499,Sending messages to a topic with an inactive durable subscription will hang producers,Blocker
+500,Eclipse fails to compile -core due to invalid symbol in UdpTransportFactory.java,Trivial
+502,fix the uberjar to tidy up the notice/license files to make it absolutely clear whats going on,Blocker
+508,Messages Sent by JMS that contain header properties cause error when STOMP client registers a Subscriber,Blocker
+509,Openwire client hangs after receiving 999 messages,Blocker
+511,CMS Client - unassigned value in ConnectionFactory constructor,Trivial
+513, 4   exception with with DB2,Blocker
+514,"Composite Destination persisted messages never get cleaned up, halt message producers",Blocker
+516,Acked persistent messages redelivered after broker restart.,Blocker
+517,The README.txt file contains references to .org,Trivial
+520,Consuming multiple messages in a transaction breaks the JournalMessageStore,Blocker
+522,Unable to create _ACK table,Blocker
+523,Typo in DefaultThreadPools.getDeaultPool(),Trivial
+526, java.sql.SQLException: Failed to remove a message during load testing,Blocker
+527,  is not JCA1.5 compliant,Blocker
+528,No clientID assigned to networkConnction,Trivial
+531,bug in redelivery logic in JMS client,Blocker
+534,"Typo in thread name ""Cleanup Timmer""",Trivial
+535,Keystore files used for unit test in Optional module have expired,Blocker
+536,Failover protocol does not work for networkConnectors,Blocker
+540,Remove Client,Blocker
+541,Use of reliable in NetworkConnector failing (rev 401),Blocker
+545,Eclipse project for Core not working,Trivial
+547,Missing queue messages,Blocker
+553,Messages on a queue are lost when multiple brokers exist if not every broker has a subscriber to the queue,Blocker
+555,Messages on a distributed queue are being delivered and redelivered multiple times,Blocker
+557,Connector delivers multiple messages to an MDB between beforeDelivery() and afterDelivery() is called.,Blocker
+559,No 'webserver' target in 1.3,Blocker
+562,ActivationSpec prevents integration with JBoss,Blocker
+563,Possible division-by-zero in stats impl,Trivial
+0,"5.3.5. Using Sort: typo ""be either""",Trivial
+1,When creating  starter with  Initializr there is no dependency for embedded DB,Trivial
+2,Sample in README broken,Trivial
+3,Documentation PDF - Missing info about version referenced in PDF document,Trivial
+4,OSGi headers mandate minimum version 3.2.8,Trivial
+5,"Sorting properties can not be named strings that are the keys of the database,such as 'type'，'name'...",Trivial
+6,"Sorting properties can not be named strings that are the keys of the database,such as 'type、'，''",Trivial
+1,Cannot disable server password encryption,Blocker
+4,DefaultModelBuilder.buildRawModel fails as it ignores pom file,Blocker
+9, does not start if there is no Jansi native library available,Blocker
+11,TransferFailedException in httpcomponents-client-4.5.13 with JDK11,Blocker
+12, 4 can't build itself with Java 11,Blocker
+13,Classified dependencies not resolved in workspace,Blocker
+16,Using MINSTALL/DEPLOY 3.0.0-M1+ does not write plugin information into -metadata.xml,Blocker
+18,881274914a80946f8af6e435eff064d3c89974fa introduces regression,Blocker
+20,not storing/getting artifacts in/from local repository,Blocker
+23,org.sonatype..polyglot.TeslaModelProcessor.locatePom(File) ignores files ending in.xml,Blocker
+24, Central returns 200 status for Nexus vulnerability page,Blocker
+25, 3.6.0 - throws exception of configuration while trying to build,Blocker
+27,apache--3.6.0 Using multi-threaded parameters causes the process to get stuck,Blocker
+34, shall not fail reporting circular dependency when the dependency is a classified secondary artifact,Blocker
+35,"Exception in thread ""main"" java.lang.Error: java.lang.TypeNotPresentException: Type com.amazonaws.services.lambda.runtime.events.SQSEvent not present",Blocker
+39,Parallel builds with empty local repository hang,Blocker
+41,can not work with a system dependency on a unix / mac / windows project,Blocker
+46,Uploading of any artifact hangs forever,Blocker
+47, dependency:get error - Premature end of Content-Length delimited message body (expected: 56473600; received: 6843,Blocker
+48, cannot build with Java 1.8.0_131,Blocker
+51,Precedence of command-line system property options has changed,Blocker
+53,Unable to run  test. Getting org.apache..surefire.util.SurefireReflectionException: ,Blocker
+54,Default profile in settings.xml must not use an id possibly already in use. ,Blocker
+56,Moving from  3.2.5 or older to  3.3.1 or newer breaks -antrun-plugin,Blocker
+57,Upgrade of -simple to a version later than 1.7.16 blocked by upstream issue.,Blocker
