@@ -45,7 +45,7 @@ def get_suggested_severity():
 @app.route("/suggested-type")
 def get_suggested_type():
     title = request.args.get("title")
-    return service.computed_suggested_type(title)
+    return service.computed_suggested_type(title).name
 
 
 @app.route("/is-offensive")
