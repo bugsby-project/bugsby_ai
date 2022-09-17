@@ -53,4 +53,4 @@ class LabelClassifier(AbstractNLPClassifier):
         pre_processed = self._pre_process_text(title)
         bag_of_words = self._vectorizer.transform([pre_processed]).toarray()
         prediction = self._classifier.predict(bag_of_words)[0]
-        return IssueType(prediction).name
+        return IssueType(prediction)

@@ -37,7 +37,7 @@ class OffensiveLanguageClassifier(AbstractNLPClassifier):
 
     def predict(self, text: str) -> float:
         """
-        Method for identifying identifying offensive language within a text
+        Method for identifying offensive language within a text
         :param text: the text to identify offensive language from
         :return: the probability of the given text to be offensive
         """
