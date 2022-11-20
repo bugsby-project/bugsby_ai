@@ -28,11 +28,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
 #      todo uncomment when task/#9
-      - name: Verify Python dependencies
-        run: pip3 install --no-deps -r requirements.txt
-
-      - name: Run tests with PyTest
-        run: pytest
+#      - name: Verify Python dependencies
+#        run: pip3 install --no-deps -r requirements.txt
+#
+#      - name: Run tests with PyTest
+#        run: pytest
 
       - name: Build Docker image
         run: docker build .
