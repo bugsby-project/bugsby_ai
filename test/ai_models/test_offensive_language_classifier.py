@@ -1,6 +1,6 @@
 import pytest
 
-from artificial_intelligence.ai_models.OffensiveLanguageClassifier import OffensiveLanguageClassifier
+from artificial_intelligence.ai_models.offensive_language_classifier import OffensiveLanguageClassifier
 
 
 @pytest.fixture

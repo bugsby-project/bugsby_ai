@@ -1,7 +1,7 @@
 import pytest
 
-from artificial_intelligence.ai_models.LabelClassifier import LabelClassifier
-from artificial_intelligence.model.IssueType import IssueType
+from artificial_intelligence.ai_models.label_classifier import LabelClassifier
+from artificial_intelligence.model.issue_type import IssueType
 
 
 @pytest.fixture

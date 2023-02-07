@@ -1,7 +1,7 @@
 import pytest
 
-from artificial_intelligence.ai_models.SeverityClassifier import SeverityClassifier
-from artificial_intelligence.model.SeverityLevel import SeverityLevel
+from artificial_intelligence.ai_models.severity_classifier import SeverityClassifier
+from artificial_intelligence.model.severity_level import SeverityLevel
 
 
 @pytest.fixture

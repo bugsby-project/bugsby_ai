@@ -1,6 +1,6 @@
-from artificial_intelligence.model.IssueType import IssueType
-from artificial_intelligence.model.Severity import Severity
-from artificial_intelligence.model.Status import Status
+from artificial_intelligence.model.issue_type import IssueType
+from artificial_intelligence.model.severity import Severity
+from artificial_intelligence.model.status import Status
 
 
 class Issue:

@@ -6,8 +6,8 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import ComplementNB
 
-from artificial_intelligence.ai_models.AbstractNLPClassifier import AbstractNLPClassifier
-from artificial_intelligence.model.SeverityLevel import SeverityLevel
+from artificial_intelligence.ai_models.abstract_nlp_classifier import AbstractNLPClassifier
+from artificial_intelligence.model.severity_level import SeverityLevel
 
 
 class SeverityClassifier(AbstractNLPClassifier):

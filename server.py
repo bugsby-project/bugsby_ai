@@ -3,11 +3,11 @@ import os
 import nltk
 from flask import Flask, request, jsonify
 
-from artificial_intelligence.ai_models.LabelClassifier import LabelClassifier
-from artificial_intelligence.ai_models.OffensiveLanguageClassifier import OffensiveLanguageClassifier
-from artificial_intelligence.ai_models.SeverityClassifier import SeverityClassifier
-from artificial_intelligence.model.Issue import Issue
-from artificial_intelligence.service.Service import Service
+from artificial_intelligence.ai_models.label_classifier import LabelClassifier
+from artificial_intelligence.ai_models.offensive_language_classifier import OffensiveLanguageClassifier
+from artificial_intelligence.ai_models.severity_classifier import SeverityClassifier
+from artificial_intelligence.model.issue import Issue
+from artificial_intelligence.service.service import Service
 
 
 def __install_packages():
