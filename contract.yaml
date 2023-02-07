@@ -17,8 +17,8 @@ paths:
           description: 'Successfully computed the severity level'
           content:
             application/json:
-              schema: 
-                $ref: '#/components/schemas/SeverityLevelEnum'
+              schema:
+                $ref: '#/components/schemas/SeverityLevelObject'
   
   /suggested-type:
     get:
@@ -26,13 +26,13 @@ paths:
       operationId: getSuggestedType
       parameters:
         - $ref: '#/components/parameters/title'
-      responses: 
+      responses:
         200:
           description: 'Successfully computed the issue type'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssueTypeEnum'
+                $ref: '#/components/schemas/IssueTypeObject'
 
   /is-offensive:
     get:
@@ -46,8 +46,7 @@ paths:
           content:
             application/json:
               schema:
-                type: number
-                format: float
+                $ref: '#/components/schemas/ProbabilityObject'
 
   /duplicate-issues:
     post:
@@ -96,6 +95,23 @@ components:
         type:
           $ref: '#/components/schemas/IssueTypeEnum'
 
+    SeverityLevelObject:
+      type: object
+      properties:
+        severity:
+          $ref: '#/components/schemas/SeverityLevelEnum'
+    IssueTypeObject:
+      type: object
+      properties:
+        issueType:
+          $ref: '#/components/schemas/IssueTypeEnum'
+    ProbabilityObject:
+      type: object
+      properties:
+        probability:
+          type: number
+          format: float
+
     SeverityLevelEnum:
       type: string
       enum:
@@ -128,9 +144,12 @@ components:
         - QUESTION
 
     IssueObjectList:
-      type: array
-      items:
-        $ref: '#/components/schemas/IssueObject'
+      type: object
+      properties:
+        issues:
+          type: array
+          items:
+            $ref: '#/components/schemas/IssueObject'
 
   parameters:
     title:
