@@ -1,10 +1,10 @@
-from artificial_intelligence.ai_models.LabelClassifier import LabelClassifier
-from artificial_intelligence.ai_models.OffensiveLanguageClassifier import OffensiveLanguageClassifier
-from artificial_intelligence.ai_models.SeverityClassifier import SeverityClassifier
+from artificial_intelligence.ai_models.label_classifier import LabelClassifier
+from artificial_intelligence.ai_models.offensive_language_classifier import OffensiveLanguageClassifier
+from artificial_intelligence.ai_models.severity_classifier import SeverityClassifier
 from artificial_intelligence.ai_models.duplicates_detector import detect
-from artificial_intelligence.model.Issue import Issue
-from artificial_intelligence.model.IssueType import IssueType
-from artificial_intelligence.model.SeverityLevel import SeverityLevel
+from artificial_intelligence.model.issue import Issue
+from artificial_intelligence.model.issue_type import IssueType
+from artificial_intelligence.model.severity_level import SeverityLevel
 
 
 class Service:

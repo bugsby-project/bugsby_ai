@@ -7,8 +7,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.naive_bayes import ComplementNB
 
-from artificial_intelligence.ai_models.AbstractNLPClassifier import AbstractNLPClassifier
-from artificial_intelligence.model.IssueType import IssueType
+from artificial_intelligence.ai_models.abstract_nlp_classifier import AbstractNLPClassifier
+from artificial_intelligence.model.issue_type import IssueType
 
 
 class LabelClassifier(AbstractNLPClassifier):

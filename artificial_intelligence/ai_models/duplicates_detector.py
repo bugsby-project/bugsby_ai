@@ -3,7 +3,7 @@ from nltk.corpus import wordnet
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-from artificial_intelligence.model.Issue import Issue
+from artificial_intelligence.model.issue import Issue
 
 __limit = 5
 __threshold = 0.2

@@ -5,7 +5,7 @@ from sklearn.calibration import CalibratedClassifierCV
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-from artificial_intelligence.ai_models.AbstractNLPClassifier import AbstractNLPClassifier
+from artificial_intelligence.ai_models.abstract_nlp_classifier import AbstractNLPClassifier
 
 
 class OffensiveLanguageClassifier(AbstractNLPClassifier):
