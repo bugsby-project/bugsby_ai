@@ -6,7 +6,11 @@ from flask import Flask, request, jsonify
 from artificial_intelligence.ai_models.label_classifier import LabelClassifier
 from artificial_intelligence.ai_models.offensive_language_classifier import OffensiveLanguageClassifier
 from artificial_intelligence.ai_models.severity_classifier import SeverityClassifier
-from artificial_intelligence.model.issue import Issue
+from artificial_intelligence.model.duplicate_issues_request import DuplicateIssuesRequest
+from artificial_intelligence.model.issue_object_list import IssueObjectList
+from artificial_intelligence.model.issue_type_object import IssueTypeObject
+from artificial_intelligence.model.probability_object import ProbabilityObject
+from artificial_intelligence.model.severity_level_object import SeverityLevelObject
 from artificial_intelligence.service.service import Service
 
 
@@ -39,28 +43,31 @@ service = Service(severity_classifier, label_classifier, offensive_language_clas
 def get_suggested_severity():
     title = request.args.get("title")
     result = service.compute_suggested_severity(title)
-    return result.name
+    return jsonify(SeverityLevelObject(result).to_json())
 
 
 @app.route("/suggested-type")
 def get_suggested_type():
     title = request.args.get("title")
-    return service.computed_suggested_type(title).name
+    result = service.computed_suggested_type(title)
+    return jsonify(IssueTypeObject(result).to_json())
 
 
 @app.route("/is-offensive")
 def get_probability_is_offensive():
     text = request.args.get("text")
-    return str(service.compute_probability_is_offensive(text))
+    result = service.compute_probability_is_offensive(text)
+    return jsonify(ProbabilityObject(result).to_json())
 
 
 @app.route("/duplicate-issues", methods=['POST'])
 def retrieve_duplicate_issues():
     data = request.json
-    project_issues = [Issue.from_json(issue_json) for issue_json in data["projectIssues"]]
-    issue = Issue.from_json(data["issue"])
-    result = service.retrieve_duplicate_issues(project_issues, issue)
-    return jsonify([issue.to_json() for issue in result])
+    duplicate_issues_request = DuplicateIssuesRequest.from_json(data)
+    result = service.retrieve_duplicate_issues(duplicate_issues_request.project_issues.issues,
+                                               duplicate_issues_request.issue)
+    issue_object_list_result = IssueObjectList(result)
+    return jsonify(issue_object_list_result.to_json())
 
 
 if __name__ == "__main__":
