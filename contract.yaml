@@ -137,9 +137,9 @@ components:
           type: string
           description: 'Stack trace of the issue'
         severity:
-          $ref: '#/components/schemas/SeverityLevelObject'
+          $ref: '#/components/schemas/SeverityEnum'
         type:
-          $ref: '#/components/schemas/IssueTypeObject'
+          $ref: '#/components/schemas/IssueTypeEnum'
 
 
     SeverityLevelObject:
