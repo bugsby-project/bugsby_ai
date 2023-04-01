@@ -6,6 +6,7 @@ from flask import Flask, request, jsonify
 from artificial_intelligence.ai_models.label_classifier import LabelClassifier
 from artificial_intelligence.ai_models.offensive_language_classifier import OffensiveLanguageClassifier
 from artificial_intelligence.ai_models.severity_classifier import SeverityClassifier
+from artificial_intelligence.log_parser.gradle_log_parser import GradleLogParser
 from artificial_intelligence.model.duplicate_issues_request import DuplicateIssuesRequest
 from artificial_intelligence.model.issue_object_list import IssueObjectList
 from artificial_intelligence.model.issue_type_object import IssueTypeObject
@@ -37,6 +38,7 @@ severity_classifier = SeverityClassifier("resources/aiModels/severityModel.jobli
 label_classifier = LabelClassifier("resources/aiModels/labelModel.joblib")
 offensive_language_classifier = OffensiveLanguageClassifier("resources/aiModels/offensiveLanguageModel.joblib")
 service = Service(severity_classifier, label_classifier, offensive_language_classifier)
+gradle_log_parser = GradleLogParser(severity_classifier)
 
 
 @app.route("/suggested-severity")
@@ -68,6 +70,14 @@ def retrieve_duplicate_issues():
                                                duplicate_issues_request.issue)
     issue_object_list_result = IssueObjectList(result)
     return jsonify(issue_object_list_result.to_json())
+
+
+@app.route("/log-analysis", methods=['POST'])
+def analyse_log_file():
+    title = request.form.get('title')
+    file_request = request.files['logFile']
+    prefilled_issue = gradle_log_parser.analyse_log(title, file_request)
+    return jsonify(prefilled_issue.to_json())
 
 
 if __name__ == "__main__":
