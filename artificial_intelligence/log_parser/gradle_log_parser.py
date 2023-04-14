@@ -90,11 +90,18 @@ class GradleLogParser:
 
     def _extract_description(self, task_failed_description: str) -> str:
         lines = task_failed_description.split('\n')
+        # extract the failed Gradle task
         task_regex = re.compile('.*Task.*', re.IGNORECASE)
-        task_failed_line = list(filter(lambda x: task_regex.match(x), lines))[0]
+
+        task_failed_lines = list(filter(lambda x: task_regex.match(x), lines))
+        task_failed_line = task_failed_lines[0] if task_failed_lines else ''
         return ' '.join(task_failed_line.split(' ')[1:])
 
     def _extract_expected_behaviour(self, description: str) -> str:
+        if description == '':
+            # default expected behaviour
+            return 'Pipeline run should have been SUCCESSFUL'
+
         return ' '.join(description.split(' ')[0:-1]) + ' should have been SUCCESSFUL'
 
     def _format_title(self, title: str) -> str:
