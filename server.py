@@ -1,6 +1,7 @@
 import os
 
 import nltk
+from nltk.corpus import wordnet
 from flask import Flask, request, jsonify
 
 from artificial_intelligence.ai_models.label_classifier import LabelClassifier
@@ -20,6 +21,7 @@ def __install_packages():
     Method for installing the necessary packaged from the nltk library
     :return:
     """
+    wordnet.ensure_loaded()
     try:
         nltk.data.find('stopwords')
         nltk.data.find('wordnet')

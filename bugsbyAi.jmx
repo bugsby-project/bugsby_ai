@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="BugsbyAI" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">500</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="LogAnalysis" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LogAnalysis" enabled="true">
+            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+              <collectionProp name="HTTPFileArgs.files">
+                <elementProp name="/Users/oskarpicus/Downloads/logs_1/0_build.txt" elementType="HTTPFileArg">
+                  <stringProp name="File.mimetype">application/octet-stream</stringProp>
+                  <stringProp name="File.path">/Users/oskarpicus/Downloads/logs_1/0_build.txt</stringProp>
+                  <stringProp name="File.paramname">logFile</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="title" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">MyTitle</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">title</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">5000</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/log-analysis</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$</stringProp>
+            <stringProp name="EXPECTED_VALUE">{
+  &quot;actualBehaviour&quot;: &quot;2024-01-31T11:47:21.2314165Z &gt; Task :compileJava FAILED\n2024-01-31T11:47:21.2343329Z /home/runner/work/denisa-demo/denisa-demo/src/main/java/org/example/Main.java:4: error: &lt;identifier&gt; expected\n2024-01-31T11:47:21.2345218Z     public stat void main(String[] args) {\n2024-01-31T11:47:21.2346288Z                ^\n2024-01-31T11:47:21.2346728Z 1 error\n2024-01-31T11:47:21.2347046Z \n2024-01-31T11:47:21.2347302Z FAILURE: Build failed with an exception.&quot;, 
+  &quot;description&quot;: &quot;&gt; Task :compileJava FAILED&quot;, 
+  &quot;expectedBehaviour&quot;: &quot;&gt; Task :compileJava should have been SUCCESSFUL&quot;, 
+  &quot;severity&quot;: &quot;MAJOR&quot;, 
+  &quot;stackTrace&quot;: &quot;2024-01-31T11:47:21.2355399Z org.gradle.api.tasks.TaskExecutionException: Execution failed for task &apos;:compileJava&apos;.\n2024-01-31T11:47:21.2357394Z \tat org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:147)\n2024-01-31T11:47:21.2359410Z \tat org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)\n2024-01-31T11:47:21.2361436Z \tat org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:145)\n2024-01-31T11:47:21.2363702Z \tat org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:133)\n2024-01-31T11:47:21.2366102Z \tat org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:77)\n2024-01-31T11:47:21.2368363Z \tat org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)\n2024-01-31T11:47:21.2370759Z \tat org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)\n2024-01-31T11:47:21.2373142Z \tat org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)\n2024-01-31T11:47:21.2375284Z \tat org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:56)\n2024-01-31T11:47:21.2377871Z \tat org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)\n2024-01-31T11:47:21.2380155Z \tat org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)\n2024-01-31T11:47:21.2382157Z \tat org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)\n2024-01-31T11:47:21.2384121Z \tat org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)\n2024-01-31T11:47:21.2386496Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)\n2024-01-31T11:47:21.2389020Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)\n2024-01-31T11:47:21.2391305Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)\n2024-01-31T11:47:21.2393521Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)\n2024-01-31T11:47:21.2395581Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)\n2024-01-31T11:47:21.2397598Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)\n2024-01-31T11:47:21.2399704Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)\n2024-01-31T11:47:21.2402004Z \tat org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)\n2024-01-31T11:47:21.2404086Z \tat org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)\n2024-01-31T11:47:21.2406090Z \tat org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:74)\n2024-01-31T11:47:21.2408214Z \tat org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:333)\n2024-01-31T11:47:21.2410631Z \tat org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:320)\n2024-01-31T11:47:21.2413615Z \tat org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:313)\n2024-01-31T11:47:21.2416173Z \tat org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:299)\n2024-01-31T11:47:21.2418414Z \tat org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.lambda$run$0(DefaultPlanExecutor.java:143)\n2024-01-31T11:47:21.2420556Z \tat org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:227)\n2024-01-31T11:47:21.2422547Z \tat org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.executeNextNode(DefaultPlanExecutor.java:218)\n2024-01-31T11:47:21.2424435Z \tat org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:140)\n2024-01-31T11:47:21.2426291Z \tat org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:72)\n2024-01-31T11:47:21.2428264Z \tat org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:144)\n2024-01-31T11:47:21.2430407Z \tat org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:129)\n2024-01-31T11:47:21.2432269Z \tat org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:42)\n2024-01-31T11:47:21.2434021Z \tat org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)\n2024-01-31T11:47:21.2436281Z \tat org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)\n2024-01-31T11:47:21.2438738Z \tat org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)\n2024-01-31T11:47:21.2441793Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)\n2024-01-31T11:47:21.2444564Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)\n2024-01-31T11:47:21.2446868Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)\n2024-01-31T11:47:21.2448884Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)\n2024-01-31T11:47:21.2451118Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)\n2024-01-31T11:47:21.2453210Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)\n2024-01-31T11:47:21.2455302Z \tat org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)\n2024-01-31T11:47:21.2457579Z \tat org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)\n2024-01-31T11:47:21.2459858Z \tat org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)\n2024-01-31T11:47:21.2462360Z \tat org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$7(DefaultBuildLifecycleController.java:165)\n2024-01-31T11:47:21.2464354Z \tat org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:238)\n2024-01-31T11:47:21.2466352Z \tat org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:174)\n2024-01-31T11:47:21.2468380Z \tat org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)\n2024-01-31T11:47:21.2470190Z \tat org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:174)\n2024-01-31T11:47:21.2472250Z \tat org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:165)\n2024-01-31T11:47:21.2474750Z \tat org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:142)\n2024-01-31T11:47:21.2477269Z \tat org.gradle.composite.internal.DefaultBuildController.doBuild(DefaultBuildController.java:231)\n2024-01-31T11:47:21.2478779Z \tat org.gradle.internal.Factories$1.create(Factories.java:31)\n2024-01-31T11:47:21.2480315Z \tat org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:270)\n2024-01-31T11:47:21.2482486Z \tat org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:119)\n2024-01-31T11:47:21.2484547Z \tat org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:124)\n2024-01-31T11:47:21.2486526Z \tat org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:204)\n2024-01-31T11:47:21.2488331Z \tat org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:51)\n2024-01-31T11:47:21.2490221Z \tat org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:264)\n2024-01-31T11:47:21.2492317Z \tat org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)\n2024-01-31T11:47:21.2494024Z \tat org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)&quot;, 
+  &quot;title&quot;: &quot;MyTitle has failed&quot;, 
+  &quot;type&quot;: &quot;BUG&quot;
+}
+</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <boolProp name="useGroupName">true</boolProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
